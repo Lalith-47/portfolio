@@ -67,8 +67,8 @@ export default function About() {
           <h2
             className="font-bold text-gradient mb-4 sm:mb-6"
             style={{
-              fontSize: 'clamp(2rem, 6vw, 3.5rem)',
-              lineHeight: 'clamp(2.5rem, 7vw, 4rem)'
+              fontSize: "clamp(2rem, 6vw, 3.5rem)",
+              lineHeight: "clamp(2.5rem, 7vw, 4rem)",
             }}
           >
             About Me
@@ -76,8 +76,8 @@ export default function About() {
           <p
             className="text-white/70 max-w-4xl mx-auto leading-relaxed px-4"
             style={{
-              fontSize: 'clamp(1rem, 3vw, 1.25rem)',
-              lineHeight: 'clamp(1.5rem, 4vw, 1.875rem)'
+              fontSize: "clamp(1rem, 3vw, 1.25rem)",
+              lineHeight: "clamp(1.5rem, 4vw, 1.875rem)",
             }}
           >
             Passionate about technology, open-source software, and continuous
@@ -182,14 +182,14 @@ export default function About() {
                 <p className="text-white/80 leading-relaxed text-sm sm:text-base">
                   I'm Lalith, a passionate second-year Computer Science and
                   Engineering student with a deep love for technology and
-                  problem-solving. My journey in tech began with curiosity and has
-                  evolved into a genuine passion for creating meaningful software
-                  solutions.
+                  problem-solving. My journey in tech began with curiosity and
+                  has evolved into a genuine passion for creating meaningful
+                  software solutions.
                 </p>
                 <p className="text-white/80 leading-relaxed text-sm sm:text-base">
                   For over 1.5 years, I've been immersed in the Linux ecosystem,
-                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
-                  with various desktop environments including KDE Plasma,
+                  exploring distributions like Ubuntu, Linux Mint, and Arch
+                  Linux with various desktop environments including KDE Plasma,
                   Cinnamon, and GNOME.
                 </p>
               </div>
@@ -202,7 +202,10 @@ export default function About() {
               </h3>
               <ul className="space-y-3 sm:space-y-4" role="list">
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
+                  <span
+                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    aria-hidden="true"
+                  >
                     ▶
                   </span>
                   <span className="text-white/80 leading-relaxed text-sm sm:text-base">
@@ -210,7 +213,10 @@ export default function About() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
+                  <span
+                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    aria-hidden="true"
+                  >
                     ▶
                   </span>
                   <span className="text-white/80 leading-relaxed text-sm sm:text-base">
@@ -219,7 +225,10 @@ export default function About() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
+                  <span
+                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    aria-hidden="true"
+                  >
                     ▶
                   </span>
                   <span className="text-white/80 leading-relaxed text-sm sm:text-base">
@@ -227,7 +236,10 @@ export default function About() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
+                  <span
+                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    aria-hidden="true"
+                  >
                     ▶
                   </span>
                   <span className="text-white/80 leading-relaxed text-sm sm:text-base">

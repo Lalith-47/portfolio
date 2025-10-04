@@ -174,13 +174,16 @@
     }
 
     /* Prevent layout shift */
-    img, video {
+    img,
+    video {
         max-width: 100%;
         height: auto;
     }
 
     /* Better form inputs on mobile */
-    input, textarea, select {
+    input,
+    textarea,
+    select {
         @apply text-base;
         /* Prevent zoom on iOS */
         font-size: max(16px, 1rem);

@@ -11,6 +11,7 @@
 Your Azure Static Web Apps deployment was failing with build errors:
 
 ### **Error 1: PostCSS Nested @apply Issue**
+
 ```
 Syntax error: @apply is not supported within nested at-rules like @media
 ```
@@ -22,12 +23,14 @@ Syntax error: @apply is not supported within nested at-rules like @media
 ---
 
 ### **Error 2: TypeScript Type Errors**
+
 ```
 Type error in ParticleBackground.tsx
 Type error in About.tsx
 ```
 
-**Cause:** 
+**Cause:**
+
 - Dynamic import of `loadSlim` was incorrectly structured
 - Readonly array type inference issues
 - Missing `as const` assertions
@@ -39,31 +42,34 @@ Type error in About.tsx
 ### **1. Fixed CSS @apply Nested in @media Queries**
 
 #### **Before (❌ Broken):**
+
 ```css
 .glass-card {
-    @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
-    @media (hover: hover) and (pointer: fine) {
-        @apply hover:bg-white/15 hover:scale-[1.02]; /* ❌ Not allowed! */
-    }
+  @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
+  @media (hover: hover) and (pointer: fine) {
+    @apply hover:bg-white/15 hover:scale-[1.02]; /* ❌ Not allowed! */
+  }
 }
 ```
 
 #### **After (✅ Fixed):**
+
 ```css
 .glass-card {
-    @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
+  @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .glass-card:hover {
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: scale(1.02);
-        box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25);
-    }
+  .glass-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25);
+  }
 }
 ```
 
 **Applied to:**
+
 - `.glass-card`
 - `.glass-button`
 - `.social-button`
@@ -73,6 +79,7 @@ Type error in About.tsx
 ### **2. Fixed ParticleBackground.tsx TypeScript Errors**
 
 #### **Before (❌ Broken):**
+
 ```typescript
 const loadSlim = dynamic(
   () => import("tsparticles-slim").then((mod) => mod.loadSlim),
@@ -86,6 +93,7 @@ const particlesInit = useCallback(async (engine: any) => {
 ```
 
 #### **After (✅ Fixed):**
+
 ```typescript
 const particlesInit = useCallback(async (engine: any) => {
   try {
@@ -98,6 +106,7 @@ const particlesInit = useCallback(async (engine: any) => {
 ```
 
 **Also Added:**
+
 ```typescript
 // Added 'as const' to all string literals
 mode: "push" as const,
@@ -111,6 +120,7 @@ type: "circle" as const,
 ### **3. Fixed About.tsx TypeScript Errors**
 
 #### **Before (❌ Broken):**
+
 ```typescript
 const [displayedCommands, setDisplayedCommands] = useState<
   typeof terminalCommands
@@ -118,6 +128,7 @@ const [displayedCommands, setDisplayedCommands] = useState<
 ```
 
 #### **After (✅ Fixed):**
+
 ```typescript
 const [displayedCommands, setDisplayedCommands] = useState<
   Array<{ command: string; output: string }>
@@ -143,11 +154,11 @@ const [displayedCommands, setDisplayedCommands] = useState<
 
 ### **📊 Build Statistics:**
 
-| Page | Size | First Load JS |
-|------|------|---------------|
-| / (Home) | 1.34 kB | 143 kB |
-| /404 | 1.5 kB | 146 kB |
-| /500 | 1.58 kB | 146 kB |
+| Page     | Size    | First Load JS |
+| -------- | ------- | ------------- |
+| / (Home) | 1.34 kB | 143 kB        |
+| /404     | 1.5 kB  | 146 kB        |
+| /500     | 1.58 kB | 146 kB        |
 
 **Shared JS:** 147 kB  
 **All pages:** Static (SSG) ✅
@@ -208,7 +219,7 @@ All the responsive improvements from earlier are still intact:
 ✅ Smooth scrolling  
 ✅ No horizontal overflow  
 ✅ Better keyboard navigation  
-✅ Optimized for all devices (320px to 4K)  
+✅ Optimized for all devices (320px to 4K)
 
 ---
 
@@ -217,11 +228,13 @@ All the responsive improvements from earlier are still intact:
 ### **Files Modified:**
 
 1. **`src/styles/globals.css`**
+
    - Removed nested `@apply` in `@media` queries
    - Converted to standard CSS properties
    - Maintained visual effects
 
 2. **`src/components/ParticleBackground.tsx`**
+
    - Fixed dynamic import pattern
    - Added `as const` assertions
    - Improved error handling
@@ -242,17 +255,20 @@ All the responsive improvements from earlier are still intact:
 ## ⚠️ **Important Notes**
 
 ### **1. CSS Hover Effects**
+
 - All hover effects are now in `@media (hover: hover)` queries
 - This prevents sticky hover states on mobile
 - Desktop users get smooth hover animations
 - Mobile users get tap-friendly interactions
 
 ### **2. PostCSS Limitations**
+
 - Never use `@apply` inside `@media` queries
 - Use standard CSS properties instead
 - Tailwind utilities work fine outside components layer
 
 ### **3. TypeScript Strict Mode**
+
 - Always use `as const` for string literal types
 - Be careful with readonly types in state
 - Dynamic imports should be inline when possible
@@ -262,17 +278,20 @@ All the responsive improvements from earlier are still intact:
 ## 🎯 **Next Steps**
 
 ### **1. Monitor Azure Deployment:**
+
 - Check GitHub Actions tab
 - Verify build succeeds
 - Test live URL
 
 ### **2. Test Live Site:**
+
 - Open Azure URL
 - Test on real mobile device
 - Check all sections load
 - Verify forms work
 
 ### **3. Optional Enhancements:**
+
 - [ ] Add custom domain
 - [ ] Configure CDN
 - [ ] Set up Web3Forms API key
@@ -286,11 +305,13 @@ All the responsive improvements from earlier are still intact:
 ### **If Azure Still Shows Errors:**
 
 1. **Check GitHub Actions:**
+
    - Go to: `https://github.com/Lalith-47/portfolio/actions`
    - Look for the latest workflow run
    - Check if it's green (success) or red (fail)
 
 2. **Check Azure Logs:**
+
    - Azure Portal → MyPortfolio
    - Click "Deployment History"
    - View detailed logs
@@ -332,13 +353,13 @@ Before considering done:
 **Problem:** Azure build failing due to PostCSS/TypeScript errors  
 **Solution:** Fixed nested @apply, TypeScript types, and imports  
 **Result:** ✅ Build successful, ready for deployment  
-**Status:** All issues resolved, site ready to go live!  
+**Status:** All issues resolved, site ready to go live!
 
 ---
 
 **Generated:** October 4, 2025  
 **Build Status:** ✅ SUCCESS  
-**Deployment:** 🚀 In Progress  
+**Deployment:** 🚀 In Progress
 
 ---
 
@@ -351,4 +372,3 @@ Before considering done:
 ---
 
 **🎊 Congratulations! Your portfolio is fixed and ready to deploy! 🎊**
-

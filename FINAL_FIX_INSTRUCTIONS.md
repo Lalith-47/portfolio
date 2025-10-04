@@ -1,13 +1,14 @@
 # 🔑 FINAL FIX - Update Azure Token (Step-by-Step)
 
 **Date:** October 4, 2025  
-**Status:** Ready to Fix  
+**Status:** Ready to Fix
 
 ---
 
 ## ✅ **CONFIRMED INFORMATION:**
 
 From your screenshots, I can confirm:
+
 - ✅ Azure app name: **MyPortfolio**
 - ✅ Azure app URL: **https://lalith.live**
 - ✅ GitHub secret name: **AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_FIELD_0FBBE8100** (correct!)
@@ -38,11 +39,13 @@ Follow these EXACT steps:
 5. Click **"New repository secret"** (green button, top right)
 
 6. **Name:** Copy and paste this EXACTLY:
+
    ```
    AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_FIELD_0FBBE8100
    ```
 
 7. **Value:** Copy and paste this EXACTLY:
+
    ```
    96571845ad0ffacd8ed168cb7d03367eb71b0f9cac788f3e7c1c4b8abcddeeb102-6424b063-3bf3-4124-8e6d-10105f8fb45f00027140fbbe8100
    ```
@@ -88,6 +91,7 @@ git push origin main
 ## 🎊 **Expected Result:**
 
 After these steps:
+
 - ✅ GitHub Actions runs successfully
 - ✅ Build completes
 - ✅ Azure accepts the token
@@ -97,4 +101,3 @@ After these steps:
 ---
 
 **Ready to deploy!** 🚀
-

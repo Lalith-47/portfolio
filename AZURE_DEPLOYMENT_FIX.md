@@ -10,7 +10,7 @@
 You were seeing this message in Azure:
 
 ```
-"Thank you for using Azure Static Web Apps! 
+"Thank you for using Azure Static Web Apps!
 We have not received any content for your site yet."
 ```
 
@@ -31,6 +31,7 @@ output_location: "out"
 ```
 
 **What happened:**
+
 1. GitHub Actions built your site successfully
 2. Next.js created the `out/` directory with your site
 3. Azure deployment looked for `build/` directory (doesn't exist!)
@@ -46,27 +47,30 @@ Updated `.github/workflows/azure-static-web-apps-thankful-field-0fbbe8100.yml`:
 ### **Changes Made:**
 
 1. **Fixed Output Directory** ✅
+
    ```yaml
-   output_location: "out"  # Changed from "build"
+   output_location: "out" # Changed from "build"
    ```
 
 2. **Added Proper Build Steps** ✅
+
    ```yaml
    - name: Setup Node.js
      uses: actions/setup-node@v4
      with:
-       node-version: '18'
-   
+       node-version: "18"
+
    - name: Install dependencies
      run: npm ci
-   
+
    - name: Build Next.js app
      run: npm run build
    ```
 
 3. **Added skip_app_build** ✅
+
    ```yaml
-   skip_app_build: true  # We build ourselves, Azure just deploys
+   skip_app_build: true # We build ourselves, Azure just deploys
    ```
 
 4. **Updated Actions Versions** ✅
@@ -97,6 +101,7 @@ Updated `.github/workflows/azure-static-web-apps-thankful-field-0fbbe8100.yml`:
 4. Watch the progress in real-time
 
 **What to look for:**
+
 - ✅ "Setup Node.js" - Should complete quickly
 - ✅ "Install dependencies" - About 30-60 seconds
 - ✅ "Run linting" - Should pass (we fixed all errors!)
@@ -136,27 +141,27 @@ Once deployment completes (2-3 minutes):
 
 ## 🎉 **Timeline**
 
-| Time | Event | Status |
-|------|-------|--------|
-| Now | Code pushed to GitHub | ✅ Done |
-| +30 sec | GitHub Actions starts | ⏳ In Progress |
-| +1 min | Dependencies installed | ⏳ Pending |
-| +1.5 min | Build completes | ⏳ Pending |
-| +2 min | Azure deployment starts | ⏳ Pending |
-| +3 min | **SITE IS LIVE!** 🎉 | ⏳ Pending |
+| Time     | Event                   | Status         |
+| -------- | ----------------------- | -------------- |
+| Now      | Code pushed to GitHub   | ✅ Done        |
+| +30 sec  | GitHub Actions starts   | ⏳ In Progress |
+| +1 min   | Dependencies installed  | ⏳ Pending     |
+| +1.5 min | Build completes         | ⏳ Pending     |
+| +2 min   | Azure deployment starts | ⏳ Pending     |
+| +3 min   | **SITE IS LIVE!** 🎉    | ⏳ Pending     |
 
 ---
 
 ## 📝 **What Was Wrong vs. What's Fixed**
 
-| Issue | Before ❌ | After ✅ |
-|-------|-----------|----------|
-| **Output Directory** | `build` (doesn't exist) | `out` (correct) |
-| **Node Setup** | Missing | Node.js 18 installed |
-| **Dependencies** | Not installed | `npm ci` runs |
-| **Build Step** | Skipped | `npm run build` runs |
-| **Linting** | Not checked | Linting enforced |
-| **Actions Version** | Old (v3) | Updated (v4) |
+| Issue                | Before ❌               | After ✅             |
+| -------------------- | ----------------------- | -------------------- |
+| **Output Directory** | `build` (doesn't exist) | `out` (correct)      |
+| **Node Setup**       | Missing                 | Node.js 18 installed |
+| **Dependencies**     | Not installed           | `npm ci` runs        |
+| **Build Step**       | Skipped                 | `npm run build` runs |
+| **Linting**          | Not checked             | Linting enforced     |
+| **Actions Version**  | Old (v3)                | Updated (v4)         |
 
 ---
 
@@ -167,6 +172,7 @@ Once deployment completes (2-3 minutes):
 Next.js has two build modes:
 
 1. **Server Mode (default):**
+
    - Creates `.next/` directory
    - Requires Node.js server
    - ❌ Not compatible with Azure Static Web Apps
@@ -177,8 +183,9 @@ Next.js has two build modes:
    - ✅ Perfect for Azure Static Web Apps
 
 Your `next.config.js` has:
+
 ```javascript
-output: 'export'  // This creates 'out/' directory
+output: "export"; // This creates 'out/' directory
 ```
 
 ---
@@ -193,6 +200,7 @@ The file `.github/workflows/azure-static-web-apps-thankful-field-0fbbe8100.yml` 
 - ⚠️ **DO NOT DELETE**
 
 If you ever need to recreate it, you'll need to:
+
 1. Go to Azure Portal
 2. Delete and recreate the Static Web App
 3. Get a new deployment token
@@ -204,12 +212,14 @@ If you ever need to recreate it, you'll need to:
 ### **If GitHub Actions Fails:**
 
 1. **Check the error message:**
+
    - Go to Actions tab
    - Click the failed workflow
    - Look for red X marks
    - Read the error message
 
 2. **Common issues:**
+
    - ❌ `npm install` fails → Node modules issue
    - ❌ `npm run lint` fails → Code has linting errors
    - ❌ `npm run build` fails → Build errors (we already fixed these!)
@@ -233,11 +243,13 @@ If you ever need to recreate it, you'll need to:
 Once the Actions workflow shows ✅ (green):
 
 1. **Open your site:**
+
    ```
    https://lalith.live
    ```
 
 2. **Test all sections:**
+
    - Hero with animated background
    - About with terminal animation
    - Skills cards
@@ -245,6 +257,7 @@ Once the Actions workflow shows ✅ (green):
    - Footer with social links
 
 3. **Test responsive:**
+
    - Open DevTools (F12)
    - Click device toggle (Ctrl+Shift+M)
    - Test iPhone, iPad, Desktop views
@@ -265,7 +278,7 @@ You'll know it worked when:
 ✅ Opening https://lalith.live shows your portfolio  
 ✅ All sections work properly  
 ✅ No console errors  
-✅ Site is responsive on mobile  
+✅ Site is responsive on mobile
 
 ---
 
@@ -274,15 +287,18 @@ You'll know it worked when:
 If after 5 minutes your site still shows "No content":
 
 1. **Check GitHub Actions:**
+
    - https://github.com/Lalith-47/portfolio/actions
    - Must show green checkmark ✅
 
 2. **Check the workflow log:**
+
    - Click on the workflow run
    - Look for any red X marks
    - Read the error messages
 
 3. **Common fixes:**
+
    ```bash
    # If workflow doesn't trigger
    # Make an empty commit to force it
@@ -302,12 +318,14 @@ If after 5 minutes your site still shows "No content":
 Once your site is live:
 
 ### **Immediate:**
+
 - [ ] Test all functionality
 - [ ] Share with friends/family
 - [ ] Test on real mobile device
 - [ ] Update resume.pdf (currently placeholder)
 
 ### **Optional Enhancements:**
+
 - [ ] Add custom domain (lalith.dev, etc.)
 - [ ] Set up Web3Forms API key for contact form
 - [ ] Add PWA icons (see ICONS_README.txt)
@@ -315,6 +333,7 @@ Once your site is live:
 - [ ] Add Google Analytics (optional)
 
 ### **Content Updates:**
+
 - [ ] Add your actual resume PDF
 - [ ] Update projects section (when you have projects to show)
 - [ ] Add blog posts (optional)
@@ -324,15 +343,15 @@ Once your site is live:
 
 ## 📈 **Expected Build Time**
 
-| Step | Duration |
-|------|----------|
-| Checkout code | 5-10 seconds |
-| Setup Node.js | 10-15 seconds |
-| Install dependencies | 30-60 seconds |
-| Run linting | 5-10 seconds |
-| Build Next.js | 20-30 seconds |
-| Deploy to Azure | 30-60 seconds |
-| **Total** | **~2-3 minutes** |
+| Step                 | Duration         |
+| -------------------- | ---------------- |
+| Checkout code        | 5-10 seconds     |
+| Setup Node.js        | 10-15 seconds    |
+| Install dependencies | 30-60 seconds    |
+| Run linting          | 5-10 seconds     |
+| Build Next.js        | 20-30 seconds    |
+| Deploy to Azure      | 30-60 seconds    |
+| **Total**            | **~2-3 minutes** |
 
 ---
 
@@ -341,7 +360,7 @@ Once your site is live:
 **Problem:** Azure couldn't find build output (looking in wrong directory)  
 **Solution:** Fixed workflow to look in `out/` instead of `build/`  
 **Status:** ✅ Fixed and pushed  
-**ETA:** Your site will be live in ~3 minutes!  
+**ETA:** Your site will be live in ~3 minutes!
 
 ---
 
@@ -360,4 +379,3 @@ https://lalith.live
 **Generated:** October 4, 2025  
 **Status:** ✅ Fix Applied  
 **Deployment:** ⏳ In Progress (check GitHub Actions)
-
