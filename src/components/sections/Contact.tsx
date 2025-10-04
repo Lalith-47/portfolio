@@ -112,8 +112,8 @@ export default function Contact() {
     {
       icon: FiMail,
       label: "Email",
-      value: "lalith@example.com",
-      href: "mailto:lalith@example.com",
+      value: "Lalith22p3347@gmail.com",
+      href: "mailto:Lalith22p3347@gmail.com",
     },
     {
       icon: FiGithub,
@@ -148,7 +148,7 @@ export default function Contact() {
     },
     {
       icon: FiMail,
-      href: "mailto:lalith@example.com",
+      href: "mailto:Lalith22p3347@gmail.com",
       label: "Email",
     },
   ];

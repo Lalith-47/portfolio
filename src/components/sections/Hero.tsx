@@ -39,7 +39,7 @@ const socialLinks = [
   },
   {
     icon: FiMail,
-    href: "mailto:lalith@example.com",
+    href: "mailto:Lalith22p3347@gmail.com",
     label: "Send Email to Lalith",
     name: "Email",
   },
