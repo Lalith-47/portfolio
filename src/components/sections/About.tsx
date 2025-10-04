@@ -56,23 +56,37 @@ export default function About() {
   return (
     <section id="about" className="section-padding container-responsive">
       <div className="w-full max-w-7xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
+          <h2
+            className="font-bold text-gradient mb-4 sm:mb-6"
+            style={{
+              fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+              lineHeight: 'clamp(2.5rem, 7vw, 4rem)'
+            }}
+          >
             About Me
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p
+            className="text-white/70 max-w-4xl mx-auto leading-relaxed px-4"
+            style={{
+              fontSize: 'clamp(1rem, 3vw, 1.25rem)',
+              lineHeight: 'clamp(1.5rem, 4vw, 1.875rem)'
+            }}
+          >
             Passionate about technology, open-source software, and continuous
             learning
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start">
           {/* Terminal Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -144,74 +158,81 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2 space-y-6"
+            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
           >
+            {/* Introduction Card */}
             <div className="glass-card">
-              <h3 className="text-2xl font-bold text-gradient mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
                 Hello, World! 🌍
               </h3>
-              <p className="text-white/80 leading-relaxed mb-4">
-                I'm Lalith, a passionate second-year Computer Science and
-                Engineering student with a deep love for technology and
-                problem-solving. My journey in tech began with curiosity and has
-                evolved into a genuine passion for creating meaningful software
-                solutions.
-              </p>
-              <p className="text-white/80 leading-relaxed">
-                For over 1.5 years, I've been immersed in the Linux ecosystem,
-                exploring distributions like Ubuntu, Linux Mint, and Arch Linux
-                with various desktop environments including KDE Plasma,
-                Cinnamon, and GNOME.
-              </p>
+              <div className="space-y-4">
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  I'm Lalith, a passionate second-year Computer Science and
+                  Engineering student with a deep love for technology and
+                  problem-solving. My journey in tech began with curiosity and has
+                  evolved into a genuine passion for creating meaningful software
+                  solutions.
+                </p>
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  For over 1.5 years, I've been immersed in the Linux ecosystem,
+                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
+                  with various desktop environments including KDE Plasma,
+                  Cinnamon, and GNOME.
+                </p>
+              </div>
             </div>
 
+            {/* What Drives Me Card */}
             <div className="glass-card">
-              <h3 className="text-2xl font-bold text-gradient mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
                 What Drives Me 🚀
               </h3>
-              <ul className="space-y-3 text-white/80" role="list">
+              <ul className="space-y-3 sm:space-y-4" role="list">
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1" aria-hidden="true">
+                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
                     ▶
                   </span>
-                  <span>
+                  <span className="text-white/80 leading-relaxed text-sm sm:text-base">
                     Building elegant web applications with modern technologies
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1" aria-hidden="true">
+                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
                     ▶
                   </span>
-                  <span>
+                  <span className="text-white/80 leading-relaxed text-sm sm:text-base">
                     Exploring open-source projects and contributing to the
                     community
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1" aria-hidden="true">
+                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
                     ▶
                   </span>
-                  <span>Mastering Linux systems and command-line tools</span>
+                  <span className="text-white/80 leading-relaxed text-sm sm:text-base">
+                    Mastering Linux systems and command-line tools
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1" aria-hidden="true">
+                  <span className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base" aria-hidden="true">
                     ▶
                   </span>
-                  <span>
+                  <span className="text-white/80 leading-relaxed text-sm sm:text-base">
                     Deploying and managing applications on Microsoft Azure
                   </span>
                 </li>
               </ul>
             </div>
 
+            {/* Philosophy Quote Card */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="glass-card bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-400/30"
             >
-              <blockquote className="text-lg text-center italic text-blue-300">
+              <blockquote className="text-base sm:text-lg text-center italic text-blue-300 leading-relaxed px-2">
                 "Learn deeply, build simply, and let the code speak."
               </blockquote>
-              <p className="text-center text-white/60 mt-2">
+              <p className="text-center text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm">
                 - My Development Philosophy
               </p>
             </motion.div>

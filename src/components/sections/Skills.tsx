@@ -11,6 +11,7 @@ import {
   SiGit,
   SiGithub,
   SiMicrosoftazure,
+  SiNotion,
 } from "react-icons/si";
 
 const skillCategories = [
@@ -41,6 +42,7 @@ const skillCategories = [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
       { name: "Azure", icon: SiMicrosoftazure, color: "#0078D4" },
+      { name: "Notion", icon: SiNotion, color: "#000000" },
     ],
   },
 ];
