@@ -142,7 +142,7 @@ export default function Contact() {
     {
       icon: FiMapPin,
       label: "Location",
-      value: "India",
+      value: "Bengaluru, India",
       href: null,
     },
   ];
@@ -171,65 +171,109 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-12 md:mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-14 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4 sm:mb-6">
+          <h2
+            className="font-bold text-gradient mb-4 sm:mb-5 md:mb-6"
+            style={{
+              fontSize: "clamp(2rem, 6vw, 3.5rem)",
+              lineHeight: "clamp(2.5rem, 7vw, 4rem)",
+            }}
+          >
             Get In Touch
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto px-4">
+          <p
+            className="text-white/70 max-w-3xl mx-auto px-4 leading-relaxed"
+            style={{
+              fontSize: "clamp(1rem, 3vw, 1.25rem)",
+              lineHeight: "clamp(1.5rem, 4vw, 1.875rem)",
+            }}
+          >
             Let's connect! Whether you want to discuss a project, share ideas,
             or just say hello, I'd love to hear from you.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
             <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">
+              <h3
+                className="font-bold text-gradient mb-4 sm:mb-5 md:mb-6"
+                style={{
+                  fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+                  lineHeight: "clamp(1.75rem, 3.5vw, 2.25rem)",
+                }}
+              >
                 Let's Start a Conversation
               </h3>
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6 sm:mb-8">
+              <p
+                className="text-white/80 leading-relaxed mb-6 sm:mb-7 md:mb-8"
+                style={{
+                  fontSize: "clamp(0.875rem, 2.5vw, 1rem)",
+                  lineHeight: "clamp(1.375rem, 3.5vw, 1.625rem)",
+                }}
+              >
                 I'm always open to discussing new opportunities, interesting
                 projects, or just having a chat about technology. Feel free to
                 reach out through any of the channels below.
               </p>
 
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-3.5 sm:space-y-4">
                 {contactInfo.map((item) => (
                   <motion.div
                     key={item.label}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 sm:gap-4"
+                    className="flex items-center gap-3 sm:gap-3.5 md:gap-4"
                   >
-                    <div className="p-2.5 sm:p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
+                    <div className="p-3 sm:p-3.5 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
                       <item.icon
-                        className="text-lg sm:text-xl text-blue-400"
+                        className="text-blue-400"
+                        style={{
+                          fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",
+                        }}
                         aria-hidden="true"
                       />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-white/60 text-xs sm:text-sm mb-0.5">{item.label}</p>
+                      <p
+                        className="text-white/60 mb-0.5 sm:mb-1"
+                        style={{
+                          fontSize: "clamp(0.75rem, 2vw, 0.875rem)",
+                        }}
+                      >
+                        {item.label}
+                      </p>
                       {item.href ? (
                         <motion.a
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.02 }}
-                          className="text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded break-words"
+                          whileHover={{ scale: 1.01 }}
+                          className="text-white hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded break-words inline-block"
+                          style={{
+                            fontSize: "clamp(0.875rem, 2.5vw, 1rem)",
+                          }}
                         >
                           {item.value}
                         </motion.a>
                       ) : (
-                        <p className="text-sm sm:text-base text-white">{item.value}</p>
+                        <p
+                          className="text-white"
+                          style={{
+                            fontSize: "clamp(0.875rem, 2.5vw, 1rem)",
+                          }}
+                        >
+                          {item.value}
+                        </p>
                       )}
                     </div>
                   </motion.div>
@@ -239,22 +283,31 @@ export default function Contact() {
 
             {/* Quick Links */}
             <div className="glass-card">
-              <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">
+              <h4
+                className="font-bold text-white mb-3 sm:mb-4"
+                style={{
+                  fontSize: "clamp(1rem, 2.5vw, 1.125rem)",
+                }}
+              >
                 Quick Connect
               </h4>
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex gap-3 sm:gap-3.5 md:gap-4">
                 {quickConnectLinks.map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="p-3 sm:p-4 glass rounded-xl hover:bg-white/20 transition-all duration-300 flex-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
+                    whileHover={{ scale: 1.08, y: -2 }}
+                    whileTap={{ scale: 0.92 }}
+                    className="p-3.5 sm:p-4 md:p-4.5 glass rounded-xl hover:bg-white/20 transition-all duration-300 flex-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[52px] sm:min-h-[56px]"
                     aria-label={`Connect via ${label}`}
                   >
-                    <Icon size={20} className="sm:w-6 sm:h-6" />
+                    <Icon
+                      style={{
+                        fontSize: "clamp(1.25rem, 3vw, 1.5rem)",
+                      }}
+                    />
                   </motion.a>
                 ))}
               </div>
@@ -265,11 +318,17 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
             <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">
+              <h3
+                className="font-bold text-gradient mb-4 sm:mb-5 md:mb-6"
+                style={{
+                  fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+                  lineHeight: "clamp(1.75rem, 3.5vw, 2.25rem)",
+                }}
+              >
                 Send a Message
               </h3>
 

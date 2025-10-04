@@ -1,13 +1,13 @@
 /**
  * Home Page Component
- * 
+ *
  * Main landing page for Lalith's portfolio website featuring:
  * - Complete SEO optimization with meta tags and structured data
  * - OpenGraph and Twitter Card support for social media sharing
  * - Performance optimizations with preconnect and DNS prefetch
  * - Accessibility compliance and semantic HTML
  * - Integration of all portfolio sections
- * 
+ *
  * @author Lalith
  * @version 1.0.0
  */
@@ -22,7 +22,7 @@ const siteConfig = {
   title: "Lalith - CSE Student & Developer",
   description:
     "Portfolio of Lalith - A passionate Computer Science and Engineering student exploring open-source, Linux, and cloud technologies. Experienced in Next.js, React, Python, and Microsoft Azure.",
-  url: "https://lalith-portfolio.azurestaticapps.net",
+  url: "https://ambitious-pond-0a5877700.2.azurestaticapps.net",
   image: "/og-image.png",
   author: "Lalith",
   keywords:
@@ -38,7 +38,7 @@ import Contact from "@/components/sections/Contact";
 
 /**
  * Home Page Component
- * 
+ *
  * Main entry point for the portfolio website.
  * Combines all sections with comprehensive SEO setup.
  */
@@ -93,7 +93,8 @@ export default function Home() {
         <link rel="canonical" href={siteConfig.url} />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

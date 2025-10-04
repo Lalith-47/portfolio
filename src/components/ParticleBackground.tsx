@@ -1,124 +1,172 @@
-import { useCallback, useMemo } from "react";
-import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+/**
+ * Optimized Particle Background Component
+ *
+ * GPU-accelerated particle animation with dynamic performance optimization.
+ * Automatically disables or reduces particles on low-end devices.
+ *
+ * @author AI Assistant
+ * @version 2.0.0
+ */
 
-// Dynamically import Particles to reduce initial bundle size
-const Particles = dynamic(() => import("react-tsparticles"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 z-0" />,
-});
+import { useEffect, useRef, memo } from "react";
+import { usePerformance } from "@/contexts/PerformanceContext";
 
-export default function ParticleBackground() {
-  const particlesInit = useCallback(async (engine: any) => {
-    try {
-      // Dynamically import and load the slim engine
-      const { loadSlim } = await import("tsparticles-slim");
-      await loadSlim(engine);
-    } catch (error) {
-      console.warn("Failed to load particles engine:", error);
-    }
-  }, []);
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  opacity: number;
+}
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    // Particles loaded callback - can be used for debugging
-    if (process.env.NODE_ENV === "development") {
-      console.log("Particles loaded:", container);
-    }
-  }, []);
+const ParticleBackground = memo(() => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<Particle[]>([]);
+  const animationFrameRef = useRef<number>();
+  const lastFrameTimeRef = useRef<number>(0);
 
-  // Memoize particle options for better performance
-  const particleOptions = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: "transparent",
-        },
-      },
-      fpsLimit: 60, // Reduced from 120 for better performance
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push" as const,
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse" as const,
-          },
-          resize: true as const,
-        },
-        modes: {
-          push: {
-            quantity: 2, // Reduced from 4
-          },
-          repulse: {
-            distance: 150, // Reduced from 200
-            duration: 0.3, // Reduced from 0.4
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: ["#3b82f6", "#06b6d4", "#8b5cf6"],
-        },
-        links: {
-          color: "#3b82f6",
-          distance: 120, // Reduced from 150
-          enable: true,
-          opacity: 0.15, // Reduced from 0.2
-          width: 1,
-        },
-        collisions: {
-          enable: false, // Disabled for better performance
-        },
-        move: {
-          direction: "none" as const,
-          enable: true,
-          outModes: {
-            default: "bounce" as const,
-          },
-          random: false,
-          speed: 0.8, // Reduced from 1
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-            area: 1000, // Increased area to reduce particle density
-          },
-          value: 60, // Reduced from 80
-        },
-        opacity: {
-          value: 0.25, // Reduced from 0.3
-        },
-        shape: {
-          type: "circle" as const,
-        },
-        size: {
-          value: { min: 1, max: 2.5 }, // Slightly reduced max size
-        },
-      },
-      detectRetina: true,
-      pauseOnBlur: true, // Pause when tab is not active
-      pauseOnOutsideViewport: true, // Pause when not visible
-    }),
-    []
-  );
+  const { animationSettings, deviceInfo } = usePerformance();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !animationSettings.enableParticles) return;
+
+    const ctx = canvas.getContext("2d", {
+      alpha: true,
+      desynchronized: true, // Optimize for animation
+    });
+
+    if (!ctx) return;
+
+    // Set canvas size
+    const setCanvasSize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2); // Limit DPR for performance
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.scale(dpr, dpr);
+    };
+
+    setCanvasSize();
+
+    // Initialize particles
+    const initParticles = () => {
+      particlesRef.current = [];
+      const count = animationSettings.particleCount;
+
+      for (let i = 0; i < count; i++) {
+        particlesRef.current.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.2,
+        });
+      }
+    };
+
+    initParticles();
+
+    // Animation loop with performance optimization
+    const animate = (currentTime: number) => {
+      // Throttle to ~30fps on low-end devices
+      const targetFPS = deviceInfo.isLowEndDevice ? 30 : 60;
+      const frameDelay = 1000 / targetFPS;
+
+      if (currentTime - lastFrameTimeRef.current < frameDelay) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      lastFrameTimeRef.current = currentTime;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+      // Update and draw particles
+      particlesRef.current.forEach((particle) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = window.innerWidth;
+        if (particle.x > window.innerWidth) particle.x = 0;
+        if (particle.y < 0) particle.y = window.innerHeight;
+        if (particle.y > window.innerHeight) particle.y = 0;
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(96, 165, 250, ${particle.opacity})`;
+        ctx.fill();
+      });
+
+      // Draw connections (only on high-end devices)
+      if (!deviceInfo.isLowEndDevice && particlesRef.current.length <= 40) {
+        const maxDistance = 100;
+
+        for (let i = 0; i < particlesRef.current.length; i++) {
+          for (let j = i + 1; j < particlesRef.current.length; j++) {
+            const dx = particlesRef.current[i].x - particlesRef.current[j].x;
+            const dy = particlesRef.current[i].y - particlesRef.current[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < maxDistance) {
+              ctx.beginPath();
+              ctx.moveTo(particlesRef.current[i].x, particlesRef.current[i].y);
+              ctx.lineTo(particlesRef.current[j].x, particlesRef.current[j].y);
+              const opacity = (1 - distance / maxDistance) * 0.2;
+              ctx.strokeStyle = `rgba(96, 165, 250, ${opacity})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    // Handle resize
+    const handleResize = () => {
+      setCanvasSize();
+      initParticles();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [animationSettings, deviceInfo]);
+
+  // Don't render if particles are disabled
+  if (!animationSettings.enableParticles) {
+    return null;
+  }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="absolute inset-0 z-0"
-    >
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        className="absolute inset-0 z-0"
-        options={particleOptions}
-      />
-    </motion.div>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{
+        willChange: "transform",
+        transform: "translateZ(0)", // GPU acceleration
+      }}
+      aria-hidden="true"
+    />
   );
-}
+});
+
+ParticleBackground.displayName = "ParticleBackground";
+
+export default ParticleBackground;

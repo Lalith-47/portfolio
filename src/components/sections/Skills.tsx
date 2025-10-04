@@ -54,7 +54,7 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
@@ -80,45 +80,63 @@ export default function Skills() {
         </motion.div>
 
         {/* Enhanced responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 mb-12 sm:mb-16 md:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8 mb-12 sm:mb-16 md:mb-20">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.05 }}
               viewport={{ once: true }}
               className="glass-card group h-full"
             >
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="p-2 sm:p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
-                  <category.icon className="text-xl sm:text-2xl text-blue-400" />
+              <div className="flex items-center gap-3 md:gap-3.5 mb-5 sm:mb-6">
+                <div className="p-2.5 sm:p-3 md:p-3.5 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
+                  <category.icon
+                    className="text-blue-400"
+                    style={{
+                      fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+                    }}
+                  />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+                <h3
+                  className="font-bold text-white group-hover:text-gradient transition-all duration-300"
+                  style={{
+                    fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+                  }}
+                >
                   {category.title}
                 </h3>
               </div>
 
               {/* Enhanced skill grid with better mobile layout */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-3.5 md:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
-                      duration: 0.5,
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05,
+                      duration: 0.3,
+                      delay: categoryIndex * 0.05 + skillIndex * 0.03,
                     }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex flex-col items-center p-2 sm:p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 min-h-[80px] sm:min-h-[90px]"
+                    className="flex flex-col items-center justify-center p-3 sm:p-3.5 md:p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 min-h-[90px] sm:min-h-[95px] md:min-h-[100px]"
                   >
                     <skill.icon
-                      className="text-lg sm:text-2xl mb-1 sm:mb-2 transition-colors duration-300 flex-shrink-0"
-                      style={{ color: skill.color }}
+                      className="mb-2 sm:mb-2.5 transition-colors duration-300 flex-shrink-0"
+                      style={{
+                        color: skill.color,
+                        fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
+                      }}
                     />
-                    <span className="text-xs sm:text-sm text-white/80 text-center font-medium leading-tight">
+                    <span
+                      className="text-white/80 text-center font-medium leading-tight"
+                      style={{
+                        fontSize: "clamp(0.75rem, 2vw, 0.875rem)",
+                      }}
+                    >
                       {skill.name}
                     </span>
                   </motion.div>
@@ -132,7 +150,7 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-12 sm:mt-16 md:mt-20"
         >
@@ -179,7 +197,7 @@ export default function Skills() {
                     key={index}
                     initial={{ opacity: 0, x: item.side === "left" ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     className={`flex items-center ${
                       item.side === "left"
@@ -188,15 +206,31 @@ export default function Skills() {
                     } relative`}
                   >
                     {/* Mobile & Tablet layout */}
-                    <div className="md:hidden w-full pl-10 sm:pl-12">
+                    <div className="md:hidden w-full pl-11 sm:pl-14">
                       <div className="glass-card">
-                        <h4 className="text-base sm:text-lg font-bold text-gradient mb-1.5 sm:mb-2">
+                        <h4
+                          className="font-bold text-gradient mb-2 sm:mb-2.5"
+                          style={{
+                            fontSize: "clamp(1rem, 2.5vw, 1.125rem)",
+                          }}
+                        >
                           {item.title}
                         </h4>
-                        <p className="text-blue-300 font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">
+                        <p
+                          className="text-blue-300 font-semibold mb-2.5 sm:mb-3"
+                          style={{
+                            fontSize: "clamp(0.75rem, 2vw, 0.875rem)",
+                          }}
+                        >
                           {item.period}
                         </p>
-                        <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                        <p
+                          className="text-white/70 leading-relaxed"
+                          style={{
+                            fontSize: "clamp(0.875rem, 2.5vw, 1rem)",
+                            lineHeight: "clamp(1.375rem, 3.5vw, 1.625rem)",
+                          }}
+                        >
                           {item.description}
                         </p>
                       </div>
@@ -209,18 +243,36 @@ export default function Skills() {
                       }`}
                     >
                       <div className="glass-card">
-                        <h4 className="text-lg lg:text-xl font-bold text-gradient mb-2">
+                        <h4
+                          className="font-bold text-gradient mb-2 md:mb-2.5 lg:mb-3"
+                          style={{
+                            fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",
+                          }}
+                        >
                           {item.title}
                         </h4>
-                        <p className="text-blue-300 font-semibold mb-3 text-sm lg:text-base">
+                        <p
+                          className="text-blue-300 font-semibold mb-3 md:mb-3.5"
+                          style={{
+                            fontSize: "clamp(0.875rem, 2vw, 1rem)",
+                          }}
+                        >
                           {item.period}
                         </p>
-                        <p className="text-white/70 text-sm lg:text-base leading-relaxed">{item.description}</p>
+                        <p
+                          className="text-white/70 leading-relaxed"
+                          style={{
+                            fontSize: "clamp(0.875rem, 2vw, 1rem)",
+                            lineHeight: "clamp(1.375rem, 3vw, 1.625rem)",
+                          }}
+                        >
+                          {item.description}
+                        </p>
                       </div>
                     </div>
 
                     {/* Timeline dot - positioned for mobile, tablet, and desktop */}
-                    <div className="absolute left-2.5 sm:left-3.5 md:left-1/2 md:transform md:-translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-2 md:border-4 border-slate-900"></div>
+                    <div className="absolute left-3 sm:left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-2 md:border-3 lg:border-4 border-slate-900 shadow-lg shadow-blue-500/50"></div>
                   </motion.div>
                 ))}
               </div>

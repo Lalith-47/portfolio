@@ -58,33 +58,62 @@
 
 @layer components {
     .glass {
-        @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+        @apply bg-white/10 border border-white/20 rounded-xl;
+        /* Conditional backdrop-blur based on device */
+    }
+
+    /* High-end devices get backdrop blur */
+    .high-end-device .glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Low-end devices skip expensive blur */
+    .low-end-device .glass {
+        background-color: rgba(255, 255, 255, 0.12);
     }
 
     .glass-card {
-        @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
+        @apply glass p-5 sm:p-6 md:p-7 lg:p-8;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* GPU acceleration */
+        transform: translateZ(0);
+        will-change: transform;
     }
 
     /* Responsive hover effects - only on devices that support hover */
     @media (hover: hover) and (pointer: fine) {
-        .glass-card:hover {
+        .high-end-device .glass-card:hover {
             background-color: rgba(255, 255, 255, 0.15);
-            transform: scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25), 0 8px 10px -6px rgba(59, 130, 246, 0.25);
+            transform: translateZ(0) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3), 0 8px 10px -6px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Simpler hover on low-end devices */
+        .low-end-device .glass-card:hover {
+            background-color: rgba(255, 255, 255, 0.18);
         }
     }
 
     .glass-button {
-        @apply glass px-4 py-2 sm:px-6 sm:py-3 transition-all duration-300 cursor-pointer;
-        /* Enhanced touch targets for mobile - WCAG compliant */
-        min-height: 44px;
-        min-width: 44px;
+        @apply glass px-4 py-2.5 sm:px-6 sm:py-3 cursor-pointer;
+        /* Enhanced touch targets for mobile - WCAG 2.1 AAA compliant (48px min) */
+        min-height: 48px;
+        min-width: 48px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        /* GPU acceleration */
+        transform: translateZ(0);
+        will-change: transform;
     }
 
     @media (hover: hover) and (pointer: fine) {
-        .glass-button:hover {
+        .high-end-device .glass-button:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
+            transform: translateZ(0) scale(1.05);
+        }
+
+        .low-end-device .glass-button:hover {
+            background-color: rgba(255, 255, 255, 0.18);
         }
     }
 
@@ -97,28 +126,31 @@
     }
 
     .terminal {
-        @apply bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-3 sm:p-4 lg:p-6 font-mono text-green-400;
+        @apply bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-4 sm:p-5 md:p-6 lg:p-7 font-mono text-green-400;
         /* Responsive font sizes for terminal */
-        font-size: clamp(0.7rem, 1.5vw + 0.5rem, 0.875rem);
+        font-size: clamp(0.75rem, 1.5vw + 0.5rem, 0.875rem);
         /* Prevent horizontal overflow on mobile */
         overflow-x: auto;
+        overflow-y: visible;
         word-wrap: break-word;
+        /* Better scrollbar for mobile */
+        -webkit-overflow-scrolling: touch;
     }
 
     /* Enhanced social link hover effects with better touch targets */
     .social-link {
-        @apply glass p-3 sm:p-4 rounded-full hover:text-blue-400 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
-        /* Ensure minimum touch target size */
-        min-height: 48px;
-        min-width: 48px;
+        @apply glass p-3 sm:p-3.5 md:p-4 rounded-full hover:text-blue-400 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        /* Ensure minimum touch target size - WCAG 2.1 AAA */
+        min-height: 52px;
+        min-width: 52px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .social-button {
-        @apply flex items-center gap-2 glass-button px-3 py-2 sm:px-4 sm:py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
-        min-height: 44px;
+        @apply flex items-center gap-2 sm:gap-2.5 glass-button px-4 py-2.5 sm:px-5 sm:py-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        min-height: 48px;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -163,16 +195,16 @@
 
     /* Container utilities for consistent spacing */
     .container-responsive {
-        @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
-        max-width: 1400px;
+        @apply w-full mx-auto px-4 sm:px-6 md:px-7 lg:px-8 xl:px-12 2xl:px-16;
+        max-width: 1440px;
     }
 
     .section-padding {
-        @apply py-12 sm:py-16 md:py-20 lg:py-24;
+        @apply py-14 sm:py-18 md:py-20 lg:py-24 xl:py-28;
     }
 
     .section-padding-sm {
-        @apply py-8 sm:py-12 md:py-16;
+        @apply py-10 sm:py-12 md:py-14 lg:py-16;
     }
 
     /* Responsive image utilities */
@@ -257,6 +289,90 @@
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
         }
+    }
+
+    /* Performance optimizations for low-end devices */
+    .low-end-device * {
+        /* Disable expensive animations */
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+
+    .low-end-device img,
+    .low-end-device video {
+        /* Force image quality reduction */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+    /* Reduce motion for accessibility and performance */
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* GPU acceleration for smooth animations */
+    .gpu-accelerated {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform;
+    }
+
+    /* Optimized animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px) translateZ(0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) translateZ(0);
+        }
+    }
+
+    /* Device-specific optimizations */
+    .mobile-device {
+        /* Optimize for mobile performance */
+    }
+
+    .tablet-device {
+        /* Optimize for tablet performance */
+    }
+
+    .desktop-device {
+        /* Optimize for desktop performance */
+    }
+
+    /* Touch device optimizations */
+    .touch-device {
+        /* Larger touch targets */
+        -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    }
+
+    .touch-device button,
+    .touch-device a {
+        /* Ensure minimum touch target size */
+        min-height: 48px;
+        min-width: 48px;
     }
 }
 

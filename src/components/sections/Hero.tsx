@@ -94,21 +94,21 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center container-responsive py-16 sm:py-20 md:py-24"
+      className="min-h-screen flex items-center justify-center container-responsive py-20 sm:py-24 md:py-28 lg:py-32"
       aria-label="Hero section"
     >
-      <div className="w-full max-w-5xl mx-auto text-center">
+      <div className="w-full max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-4 xs:space-y-6 sm:space-y-8 lg:space-y-10"
+          transition={{ duration: 0.5 }}
+          className="space-y-5 xs:space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12"
         >
           {/* Main heading with responsive typography */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="font-bold leading-tight"
             style={{
               fontSize: "clamp(2rem, 8vw, 5rem)",
@@ -130,7 +130,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-white/80 max-w-4xl mx-auto leading-relaxed"
             style={{
               fontSize: "clamp(1.125rem, 4vw, 2rem)",
@@ -147,7 +147,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="text-white/70 max-w-3xl mx-auto leading-relaxed px-4"
             style={{
               fontSize: "clamp(1rem, 3vw, 1.25rem)",
@@ -163,8 +163,8 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-6 justify-center items-stretch xs:items-center px-4 max-w-md xs:max-w-none mx-auto"
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-5 md:gap-6 justify-center items-stretch xs:items-center px-4 max-w-md xs:max-w-2xl mx-auto"
             role="group"
             aria-label="Call to action buttons"
           >
@@ -172,7 +172,10 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="w-full xs:w-auto glass-button glow-border px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
+              className="w-full xs:w-auto glass-button glow-border px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-4.5 font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[52px]"
+              style={{
+                fontSize: "clamp(1rem, 2.5vw, 1.125rem)",
+              }}
               aria-label="Navigate to contact section"
             >
               Get In Touch
@@ -185,10 +188,16 @@ export default function Hero() {
               onClick={handleResumeClick}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full xs:w-auto glass-button px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
+              className="w-full xs:w-auto glass-button px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-4.5 font-semibold rounded-xl flex items-center justify-center gap-2 sm:gap-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[52px]"
+              style={{
+                fontSize: "clamp(1rem, 2.5vw, 1.125rem)",
+              }}
               aria-label="Download resume (opens in new tab)"
             >
-              <FiDownload aria-hidden="true" className="flex-shrink-0" />
+              <FiDownload
+                aria-hidden="true"
+                className="flex-shrink-0 text-lg sm:text-xl"
+              />
               Resume
             </motion.a>
           </motion.div>
@@ -197,8 +206,8 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex justify-center space-x-4 sm:space-x-6 px-4"
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex justify-center space-x-4 sm:space-x-5 md:space-x-6 px-4"
             role="list"
             aria-label="Social media links"
           >
@@ -208,13 +217,16 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, y: -3 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.15, y: -3 }}
+                whileTap={{ scale: 0.92 }}
                 className="social-link"
                 aria-label={label}
                 role="listitem"
               >
-                <Icon size={24} aria-hidden="true" />
+                <Icon
+                  className="text-xl sm:text-2xl md:text-2xl"
+                  aria-hidden="true"
+                />
               </motion.a>
             ))}
           </motion.div>
@@ -223,25 +235,33 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="max-w-lg mx-auto px-4"
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="max-w-2xl mx-auto px-4"
           >
             <div className="glass-card text-center">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gradient mb-3 sm:mb-4 md:mb-6">
+              <h3
+                className="font-semibold text-gradient mb-4 sm:mb-5 md:mb-6"
+                style={{
+                  fontSize: "clamp(1.125rem, 3vw, 1.5rem)",
+                }}
+              >
                 Connect with Me
               </h3>
-              <div className="flex flex-col xs:flex-row justify-center items-stretch xs:items-center gap-3 xs:gap-3 sm:gap-4">
+              <div className="flex flex-col xs:flex-row justify-center items-stretch xs:items-center gap-3 sm:gap-4 md:gap-5">
                 <motion.a
                   href="https://github.com/Lalith-47/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="social-button justify-center w-full xs:w-auto"
+                  className="social-button justify-center w-full xs:w-auto min-w-[140px]"
                   aria-label="Visit Lalith's GitHub profile"
                 >
-                  <FiGithub size={18} aria-hidden="true" className="flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-medium">
+                  <FiGithub
+                    className="text-lg sm:text-xl flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm sm:text-base md:text-lg font-medium">
                     GitHub
                   </span>
                 </motion.a>
@@ -252,11 +272,14 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="social-button justify-center w-full xs:w-auto"
+                  className="social-button justify-center w-full xs:w-auto min-w-[140px]"
                   aria-label="Visit Lalith's LinkedIn profile"
                 >
-                  <FiLinkedin size={18} aria-hidden="true" className="flex-shrink-0" />
-                  <span className="text-sm sm:text-base font-medium">
+                  <FiLinkedin
+                    className="text-lg sm:text-xl flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm sm:text-base md:text-lg font-medium">
                     LinkedIn
                   </span>
                 </motion.a>
@@ -268,19 +291,28 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="absolute bottom-8 sm:bottom-10 md:bottom-12 left-1/2 transform -translate-x-1/2 hidden sm:block"
             aria-label="Scroll down indicator"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-6 h-10 md:w-7 md:h-11 border-2 border-white/30 rounded-full flex justify-center cursor-pointer hover:border-white/50 transition-colors"
               aria-hidden="true"
+              onClick={() => {
+                document
+                  .querySelector("#about")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               <motion.div
                 animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="w-1 h-3 bg-white/50 rounded-full mt-2"
               />
             </motion.div>
