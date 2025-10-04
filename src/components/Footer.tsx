@@ -46,21 +46,21 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <footer className="relative z-10 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center space-y-6"
+          className="text-center space-y-4 sm:space-y-6"
         >
           {/* Main footer content */}
           <div className="glass-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gradient mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-3 sm:mb-4">
               Thanks for Visiting!
             </h3>
-            <p className="text-white/70 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4 sm:mb-6 px-2">
               This portfolio showcases my journey as a Computer Science student
               passionate about open-source, Linux, and cloud technologies. Let's
               build something amazing together!
@@ -88,27 +88,27 @@ export default function Footer() {
           {/* Azure hosting note */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex items-center justify-center gap-2 text-white/60 hover:text-blue-400 transition-colors duration-300"
+            className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm text-white/60 hover:text-blue-400 transition-colors duration-300"
           >
             <span>Hosted with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <FiHeart className="text-red-400" />
+              <FiHeart className="text-red-400 text-sm sm:text-base" />
             </motion.div>
             <span>on</span>
-            <SiMicrosoftazure className="text-blue-400" />
+            <SiMicrosoftazure className="text-blue-400 text-sm sm:text-base" />
             <span className="font-semibold">Microsoft Azure</span>
           </motion.div>
 
           {/* Copyright and links */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10">
-            <p className="text-white/60">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-white/10">
+            <p className="text-xs sm:text-sm text-white/60 text-center">
               © {currentYear} Lalith. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/60">
               <motion.a
                 href="#home"
                 whileHover={{ scale: 1.05 }}
@@ -141,9 +141,9 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="pt-4"
+            className="pt-3 sm:pt-4 px-4"
           >
-            <p className="text-white/40 italic text-sm">
+            <p className="text-white/40 italic text-xs sm:text-sm leading-relaxed">
               "Learn deeply, build simply, and let the code speak."
             </p>
           </motion.div>

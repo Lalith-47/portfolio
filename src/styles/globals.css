@@ -48,14 +48,21 @@
     }
 
     .glass-card {
-        @apply glass p-4 sm:p-6 lg:p-8 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25;
+        @apply glass p-4 sm:p-6 lg:p-8 transition-all duration-300;
+        /* Responsive hover effects - only on devices that support hover */
+        @media (hover: hover) and (pointer: fine) {
+            @apply hover:bg-white/15 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/25;
+        }
     }
 
     .glass-button {
-        @apply glass px-4 py-2 sm:px-6 sm:py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer;
-        /* Enhanced touch targets for mobile */
+        @apply glass px-4 py-2 sm:px-6 sm:py-3 transition-all duration-300 cursor-pointer;
+        /* Enhanced touch targets for mobile - WCAG compliant */
         min-height: 44px;
         min-width: 44px;
+        @media (hover: hover) and (pointer: fine) {
+            @apply hover:bg-white/20 hover:scale-105;
+        }
     }
 
     .text-gradient {
@@ -69,7 +76,10 @@
     .terminal {
         @apply bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-3 sm:p-4 lg:p-6 font-mono text-green-400;
         /* Responsive font sizes for terminal */
-        font-size: clamp(0.75rem, 2vw, 0.875rem);
+        font-size: clamp(0.7rem, 1.5vw + 0.5rem, 0.875rem);
+        /* Prevent horizontal overflow on mobile */
+        overflow-x: auto;
+        word-wrap: break-word;
     }
 
     /* Enhanced social link hover effects with better touch targets */
@@ -133,6 +143,48 @@
 
     .section-padding-sm {
         @apply py-8 sm:py-12 md:py-16;
+    }
+
+    /* Responsive image utilities */
+    .responsive-img {
+        @apply w-full h-auto object-cover;
+        max-width: 100%;
+    }
+
+    .responsive-icon {
+        @apply flex-shrink-0;
+        width: clamp(1rem, 2vw, 1.5rem);
+        height: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    /* Prevent layout shift */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Better form inputs on mobile */
+    input, textarea, select {
+        @apply text-base;
+        /* Prevent zoom on iOS */
+        font-size: max(16px, 1rem);
+    }
+
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Better focus visible for keyboard navigation */
+    :focus-visible {
+        @apply outline-2 outline-offset-2 outline-blue-400;
     }
 }
 
