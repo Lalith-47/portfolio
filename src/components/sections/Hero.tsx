@@ -94,7 +94,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center container-responsive section-padding"
+      className="min-h-screen flex items-center justify-center container-responsive py-16 sm:py-20 md:py-24"
       aria-label="Hero section"
     >
       <div className="w-full max-w-5xl mx-auto text-center">
@@ -102,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6 sm:space-y-8 lg:space-y-10"
+          className="space-y-4 xs:space-y-6 sm:space-y-8 lg:space-y-10"
         >
           {/* Main heading with responsive typography */}
           <motion.h1
@@ -164,7 +164,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col xs:flex-row gap-4 xs:gap-6 justify-center items-center px-4"
+            className="flex flex-col xs:flex-row gap-3 xs:gap-4 sm:gap-6 justify-center items-stretch xs:items-center px-4 max-w-md xs:max-w-none mx-auto"
             role="group"
             aria-label="Call to action buttons"
           >
@@ -172,7 +172,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="w-full xs:w-auto glass-button glow-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full xs:w-auto glass-button glow-border px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
               aria-label="Navigate to contact section"
             >
               Get In Touch
@@ -185,10 +185,10 @@ export default function Hero() {
               onClick={handleResumeClick}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full xs:w-auto glass-button px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full xs:w-auto glass-button px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
               aria-label="Download resume (opens in new tab)"
             >
-              <FiDownload aria-hidden="true" />
+              <FiDownload aria-hidden="true" className="flex-shrink-0" />
               Resume
             </motion.a>
           </motion.div>
@@ -224,23 +224,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="max-w-md mx-auto px-4"
+            className="max-w-lg mx-auto px-4"
           >
             <div className="glass-card text-center">
-              <h3 className="text-lg sm:text-xl font-semibold text-gradient mb-4 sm:mb-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gradient mb-3 sm:mb-4 md:mb-6">
                 Connect with Me
               </h3>
-              <div className="flex flex-col xs:flex-row justify-center gap-3 xs:gap-4">
+              <div className="flex flex-col xs:flex-row justify-center items-stretch xs:items-center gap-3 xs:gap-3 sm:gap-4">
                 <motion.a
                   href="https://github.com/Lalith-47/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="social-button justify-center"
+                  className="social-button justify-center w-full xs:w-auto"
                   aria-label="Visit Lalith's GitHub profile"
                 >
-                  <FiGithub size={18} aria-hidden="true" />
+                  <FiGithub size={18} aria-hidden="true" className="flex-shrink-0" />
                   <span className="text-sm sm:text-base font-medium">
                     GitHub
                   </span>
@@ -252,10 +252,10 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="social-button justify-center"
+                  className="social-button justify-center w-full xs:w-auto"
                   aria-label="Visit Lalith's LinkedIn profile"
                 >
-                  <FiLinkedin size={18} aria-hidden="true" />
+                  <FiLinkedin size={18} aria-hidden="true" className="flex-shrink-0" />
                   <span className="text-sm sm:text-base font-medium">
                     LinkedIn
                   </span>

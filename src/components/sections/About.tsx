@@ -86,7 +86,7 @@ export default function About() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-start">
           {/* Left Column: Terminal + What Drives Me */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -99,7 +99,7 @@ export default function About() {
               },
             }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1 space-y-6 sm:space-y-8"
+            className="order-2 lg:order-1 space-y-4 sm:space-y-6 md:space-y-8"
           >
             <div
               className="terminal"
@@ -107,14 +107,14 @@ export default function About() {
               aria-live="polite"
               aria-label="Terminal output"
             >
-              <div className="flex items-center gap-2 mb-4 pb-4 border-b border-green-500/30">
-                <FiTerminal className="text-green-400" aria-hidden="true" />
-                <span className="text-green-400 font-mono">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-green-500/30">
+                <FiTerminal className="text-green-400 text-sm sm:text-base" aria-hidden="true" />
+                <span className="text-green-400 font-mono text-xs sm:text-sm">
                   lalith@portfolio:~$
                 </span>
               </div>
 
-              <div className="space-y-3 min-h-[300px]">
+              <div className="space-y-2 sm:space-y-3 min-h-[250px] sm:min-h-[300px]">
                 {displayedCommands.map((cmd, index) => (
                   <motion.div
                     key={`${cmd.command}-${index}`}
@@ -156,7 +156,7 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
               className="glass-card bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-400/30"
             >
-              <blockquote className="text-base sm:text-lg text-center italic text-blue-300 leading-relaxed px-2">
+              <blockquote className="text-sm sm:text-base md:text-lg text-center italic text-blue-300 leading-relaxed px-2">
                 "Learn deeply, build simply, and let the code speak."
               </blockquote>
               <p className="text-center text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm">
@@ -171,14 +171,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
+            className="order-1 lg:order-2 space-y-4 sm:space-y-6 md:space-y-8"
           >
             {/* Introduction Card */}
             <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gradient mb-3 sm:mb-4 md:mb-5">
                 Hello, World! 🌍
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <p className="text-white/80 leading-relaxed text-sm sm:text-base">
                   I'm Lalith, a passionate second-year Computer Science and
                   Engineering student with a deep love for technology and
@@ -197,13 +197,13 @@ export default function About() {
 
             {/* What Drives Me Card - Now under Hello World */}
             <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gradient mb-3 sm:mb-4 md:mb-5">
                 What Drives Me 🚀
               </h3>
-              <ul className="space-y-3 sm:space-y-4" role="list">
-                <li className="flex items-start gap-3">
+              <ul className="space-y-2.5 sm:space-y-3 md:space-y-4" role="list">
+                <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    className="text-blue-400 mt-1 flex-shrink-0 text-xs sm:text-sm md:text-base"
                     aria-hidden="true"
                   >
                     ▶
@@ -212,9 +212,9 @@ export default function About() {
                     Building elegant web applications with modern technologies
                   </span>
                 </li>
-                <li className="flex items-start gap-3">
+                <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    className="text-blue-400 mt-1 flex-shrink-0 text-xs sm:text-sm md:text-base"
                     aria-hidden="true"
                   >
                     ▶
@@ -224,9 +224,9 @@ export default function About() {
                     community
                   </span>
                 </li>
-                <li className="flex items-start gap-3">
+                <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    className="text-blue-400 mt-1 flex-shrink-0 text-xs sm:text-sm md:text-base"
                     aria-hidden="true"
                   >
                     ▶
@@ -235,9 +235,9 @@ export default function About() {
                     Mastering Linux systems and command-line tools
                   </span>
                 </li>
-                <li className="flex items-start gap-3">
+                <li className="flex items-start gap-2 sm:gap-3">
                   <span
-                    className="text-blue-400 mt-1 flex-shrink-0 text-sm sm:text-base"
+                    className="text-blue-400 mt-1 flex-shrink-0 text-xs sm:text-sm md:text-base"
                     aria-hidden="true"
                   >
                     ▶

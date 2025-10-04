@@ -91,7 +91,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Enhanced responsive project grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -109,30 +109,30 @@ export default function Projects() {
 
               <div className="relative z-10 flex flex-col h-full">
                 {/* Enhanced project header with better mobile layout */}
-                <div className="flex items-start justify-between mb-4 sm:mb-6">
+                <div className="flex items-start justify-between mb-3 sm:mb-4 md:mb-6 gap-2">
                   <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                     <div
-                      className={`p-2 sm:p-3 rounded-lg bg-gradient-to-r ${project.gradient} bg-opacity-20 border border-white/20 flex-shrink-0`}
+                      className={`p-2 sm:p-2.5 md:p-3 rounded-lg bg-gradient-to-r ${project.gradient} bg-opacity-20 border border-white/20 flex-shrink-0`}
                     >
-                      <project.icon className="text-lg sm:text-2xl text-white" />
+                      <project.icon className="text-base sm:text-lg md:text-2xl text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300 truncate">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300 truncate">
                       {project.title}
                     </h3>
                   </div>
 
                   {/* Enhanced action buttons with better touch targets */}
-                  <div className="flex gap-2 flex-shrink-0 ml-2">
+                  <div className="flex gap-1.5 sm:gap-2 flex-shrink-0">
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-2 sm:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                      className="p-2 sm:p-2.5 md:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label={`View ${project.title} on GitHub`}
                     >
-                      <FiGithub className="text-base sm:text-lg" />
+                      <FiGithub className="text-sm sm:text-base md:text-lg" />
                     </motion.a>
 
                     {project.live && (
@@ -142,17 +142,17 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 sm:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                        className="p-2 sm:p-2.5 md:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
                         aria-label={`View ${project.title} live demo`}
                       >
-                        <FiExternalLink className="text-base sm:text-lg" />
+                        <FiExternalLink className="text-sm sm:text-base md:text-lg" />
                       </motion.a>
                     )}
                   </div>
                 </div>
 
                 {/* Project description with responsive text */}
-                <p className="text-white/80 leading-relaxed mb-4 sm:mb-6 flex-grow text-sm sm:text-base">
+                <p className="text-white/80 leading-relaxed mb-3 sm:mb-4 md:mb-6 flex-grow text-sm sm:text-base">
                   {project.description}
                 </p>
 
@@ -161,7 +161,7 @@ export default function Projects() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm bg-white/10 border border-white/20 rounded-full text-white/90 hover:bg-white/20 transition-colors duration-300"
+                      className="px-2 py-0.5 sm:px-2.5 sm:py-1 md:px-3 md:py-1 text-xs sm:text-sm bg-white/10 border border-white/20 rounded-full text-white/90 hover:bg-white/20 transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -209,11 +209,11 @@ export default function Projects() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 glass-button glow-border px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="inline-flex items-center justify-center gap-2 glass-button glow-border px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
               aria-label="Visit Lalith's GitHub profile"
             >
-              <FiGithub />
-              View GitHub Profile
+              <FiGithub className="flex-shrink-0" />
+              <span>View GitHub Profile</span>
             </motion.a>
           </div>
         </motion.div>

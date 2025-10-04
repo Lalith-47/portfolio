@@ -19,25 +19,39 @@
         overflow-x: hidden;
     }
 
-    /* Responsive base font sizes */
-    @media (max-width: 640px) {
+    /* Responsive base font sizes - fluid typography */
+    @media (max-width: 374px) {
         html {
-            font-size: 14px;
-            /* Smaller base for mobile */
+            font-size: 13px;
+            /* Extra small mobile devices */
         }
     }
 
-    @media (min-width: 641px) and (max-width: 1024px) {
+    @media (min-width: 375px) and (max-width: 640px) {
+        html {
+            font-size: 14px;
+            /* Standard mobile devices */
+        }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+        html {
+            font-size: 14.5px;
+            /* Large mobile / small tablet */
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
         html {
             font-size: 15px;
-            /* Medium base for tablet */
+            /* Standard tablet */
         }
     }
 
     @media (min-width: 1025px) {
         html {
             font-size: 16px;
-            /* Standard base for desktop */
+            /* Desktop and above */
         }
     }
 }
@@ -192,18 +206,57 @@
     /* Smooth scrolling for anchor links */
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 5rem;
+        scroll-padding-top: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        html {
+            scroll-padding-top: 5rem;
+        }
     }
 
     /* Prevent horizontal scroll */
     body {
         overflow-x: hidden;
         width: 100%;
+        position: relative;
+    }
+
+    * {
+        box-sizing: border-box;
     }
 
     /* Better focus visible for keyboard navigation */
     :focus-visible {
         @apply outline-2 outline-offset-2 outline-blue-400;
+    }
+
+    /* Improved tap highlighting on mobile */
+    * {
+        -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    }
+
+    /* Prevent text size adjust on orientation change */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    /* Better line breaking for long words */
+    p,
+    li,
+    span {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Improved touch scrolling */
+    @media (hover: none) and (pointer: coarse) {
+        * {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
     }
 }
 

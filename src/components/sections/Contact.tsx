@@ -173,18 +173,18 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4 sm:mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto px-4">
             Let's connect! Whether you want to discuss a project, share ideas,
             or just say hello, I'd love to hear from you.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -194,42 +194,42 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="glass-card">
-              <h3 className="text-2xl font-bold text-gradient mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">
                 Let's Start a Conversation
               </h3>
-              <p className="text-white/80 leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6 sm:mb-8">
                 I'm always open to discussing new opportunities, interesting
                 projects, or just having a chat about technology. Feel free to
                 reach out through any of the channels below.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {contactInfo.map((item) => (
                   <motion.div
                     key={item.label}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-3 sm:gap-4"
                   >
-                    <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30">
+                    <div className="p-2.5 sm:p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
                       <item.icon
-                        className="text-xl text-blue-400"
+                        className="text-lg sm:text-xl text-blue-400"
                         aria-hidden="true"
                       />
                     </div>
-                    <div>
-                      <p className="text-white/60 text-sm">{item.label}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-white/60 text-xs sm:text-sm mb-0.5">{item.label}</p>
                       {item.href ? (
                         <motion.a
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.02 }}
-                          className="text-white hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+                          className="text-sm sm:text-base text-white hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded break-words"
                         >
                           {item.value}
                         </motion.a>
                       ) : (
-                        <p className="text-white">{item.value}</p>
+                        <p className="text-sm sm:text-base text-white">{item.value}</p>
                       )}
                     </div>
                   </motion.div>
@@ -239,10 +239,10 @@ export default function Contact() {
 
             {/* Quick Links */}
             <div className="glass-card">
-              <h4 className="text-lg font-bold text-white mb-4">
+              <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">
                 Quick Connect
               </h4>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {quickConnectLinks.map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -251,10 +251,10 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="p-4 glass rounded-xl hover:bg-white/20 transition-all duration-300 flex-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                    className="p-3 sm:p-4 glass rounded-xl hover:bg-white/20 transition-all duration-300 flex-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-h-[48px]"
                     aria-label={`Connect via ${label}`}
                   >
-                    <Icon size={24} />
+                    <Icon size={20} className="sm:w-6 sm:h-6" />
                   </motion.a>
                 ))}
               </div>
@@ -269,7 +269,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <div className="glass-card">
-              <h3 className="text-2xl font-bold text-gradient mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">
                 Send a Message
               </h3>
 
@@ -314,7 +314,7 @@ export default function Contact() {
                     </motion.div>
                   )}
 
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label
                         htmlFor="name"
@@ -336,7 +336,7 @@ export default function Contact() {
                         })}
                         type="text"
                         id="name"
-                        className={`w-full px-4 py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
+                        className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
                           errors.name
                             ? "border-red-500/50 focus:border-red-400"
                             : "border-white/20 focus:border-blue-400"
@@ -375,7 +375,7 @@ export default function Contact() {
                         })}
                         type="email"
                         id="email"
-                        className={`w-full px-4 py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
+                        className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
                           errors.email
                             ? "border-red-500/50 focus:border-red-400"
                             : "border-white/20 focus:border-blue-400"
@@ -419,7 +419,7 @@ export default function Contact() {
                       })}
                       type="text"
                       id="subject"
-                      className={`w-full px-4 py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
                         errors.subject
                           ? "border-red-500/50 focus:border-red-400"
                           : "border-white/20 focus:border-blue-400"
@@ -462,7 +462,7 @@ export default function Contact() {
                       })}
                       id="message"
                       rows={5}
-                      className={`w-full px-4 py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 resize-none ${
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 resize-none text-base ${
                         errors.message
                           ? "border-red-500/50 focus:border-red-400"
                           : "border-white/20 focus:border-blue-400"

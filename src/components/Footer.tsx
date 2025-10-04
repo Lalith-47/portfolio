@@ -46,28 +46,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+    <footer className="relative z-10 py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center space-y-4 sm:space-y-6"
+          className="text-center space-y-3 sm:space-y-4 md:space-y-6"
         >
           {/* Main footer content */}
           <div className="glass-card max-w-2xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gradient mb-2 sm:mb-3 md:mb-4">
               Thanks for Visiting!
             </h3>
-            <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4 sm:mb-6 px-2">
+            <p className="text-xs sm:text-sm md:text-base text-white/70 leading-relaxed mb-3 sm:mb-4 md:mb-6 px-2">
               This portfolio showcases my journey as a Computer Science student
               passionate about open-source, Linux, and cloud technologies. Let's
               build something amazing together!
             </p>
 
             {/* Social Links in Footer */}
-            <div className="flex justify-center space-x-4 mb-4">
+            <div className="flex justify-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
               {socialLinks.map(({ icon: Icon, href, label, name }) => (
                 <motion.a
                   key={name}
@@ -76,10 +76,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="glass p-2 rounded-full hover:text-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                  className="glass p-2 sm:p-2.5 rounded-full hover:text-blue-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label={label}
                 >
-                  <Icon size={18} aria-hidden="true" />
+                  <Icon size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
                 </motion.a>
               ))}
             </div>
@@ -88,31 +88,31 @@ export default function Footer() {
           {/* Azure hosting note */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm text-white/60 hover:text-blue-400 transition-colors duration-300"
+            className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 md:gap-2 text-xs sm:text-sm text-white/60 hover:text-blue-400 transition-colors duration-300 px-4"
           >
             <span>Hosted with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <FiHeart className="text-red-400 text-sm sm:text-base" />
+              <FiHeart className="text-red-400 text-xs sm:text-sm md:text-base" />
             </motion.div>
             <span>on</span>
-            <SiMicrosoftazure className="text-blue-400 text-sm sm:text-base" />
+            <SiMicrosoftazure className="text-blue-400 text-xs sm:text-sm md:text-base" />
             <span className="font-semibold">Microsoft Azure</span>
           </motion.div>
 
           {/* Copyright and links */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 md:gap-4 pt-4 sm:pt-6 md:pt-8 border-t border-white/10">
             <p className="text-xs sm:text-sm text-white/60 text-center">
               © {currentYear} Lalith. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/60">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-white/60">
               <motion.a
                 href="#home"
                 whileHover={{ scale: 1.05 }}
-                className="hover:text-white transition-colors duration-300"
+                className="hover:text-white transition-colors duration-300 min-h-[44px] flex items-center"
                 onClick={(e) => {
                   e.preventDefault();
                   document
@@ -122,13 +122,13 @@ export default function Footer() {
               >
                 Back to Top
               </motion.a>
-              <span>•</span>
+              <span className="hidden sm:inline">•</span>
               <motion.a
                 href="https://github.com/Lalith-47/portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
-                className="hover:text-white transition-colors duration-300"
+                className="hover:text-white transition-colors duration-300 min-h-[44px] flex items-center"
               >
                 View Source
               </motion.a>
@@ -141,7 +141,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="pt-3 sm:pt-4 px-4"
+            className="pt-2 sm:pt-3 md:pt-4 px-4"
           >
             <p className="text-white/40 italic text-xs sm:text-sm leading-relaxed">
               "Learn deeply, build simply, and let the code speak."

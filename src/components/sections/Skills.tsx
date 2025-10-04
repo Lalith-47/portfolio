@@ -80,7 +80,7 @@ export default function Skills() {
         </motion.div>
 
         {/* Enhanced responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 mb-12 sm:mb-16 md:mb-20">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -134,10 +134,10 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 sm:mt-20"
+          className="mt-12 sm:mt-16 md:mt-20"
         >
           <h3
-            className="font-bold text-gradient text-center mb-8 sm:mb-12"
+            className="font-bold text-gradient text-center mb-6 sm:mb-8 md:mb-12"
             style={{
               fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
               lineHeight: "clamp(2rem, 6vw, 3rem)",
@@ -149,9 +149,9 @@ export default function Skills() {
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Enhanced timeline line for mobile and desktop */}
-              <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
+              <div className="absolute left-3 sm:left-4 md:left-1/2 md:transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
 
-              <div className="space-y-8 sm:space-y-12">
+              <div className="space-y-6 sm:space-y-8 md:space-y-12">
                 {[
                   {
                     period: "2024 - Present",
@@ -183,17 +183,17 @@ export default function Skills() {
                     viewport={{ once: true }}
                     className={`flex items-center ${
                       item.side === "left"
-                        ? "sm:justify-start"
-                        : "sm:justify-end"
+                        ? "md:justify-start"
+                        : "md:justify-end"
                     } relative`}
                   >
-                    {/* Mobile layout */}
-                    <div className="sm:hidden w-full pl-12">
+                    {/* Mobile & Tablet layout */}
+                    <div className="md:hidden w-full pl-10 sm:pl-12">
                       <div className="glass-card">
-                        <h4 className="text-base sm:text-lg font-bold text-gradient mb-1 sm:mb-2">
+                        <h4 className="text-base sm:text-lg font-bold text-gradient mb-1.5 sm:mb-2">
                           {item.title}
                         </h4>
-                        <p className="text-blue-300 font-semibold mb-2 sm:mb-3 text-sm">
+                        <p className="text-blue-300 font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">
                           {item.period}
                         </p>
                         <p className="text-white/70 text-sm sm:text-base leading-relaxed">
@@ -204,23 +204,23 @@ export default function Skills() {
 
                     {/* Desktop layout */}
                     <div
-                      className={`hidden sm:block w-5/12 ${
+                      className={`hidden md:block w-5/12 ${
                         item.side === "right" ? "text-right" : ""
                       }`}
                     >
                       <div className="glass-card">
-                        <h4 className="text-lg font-bold text-gradient mb-2">
+                        <h4 className="text-lg lg:text-xl font-bold text-gradient mb-2">
                           {item.title}
                         </h4>
-                        <p className="text-blue-300 font-semibold mb-3">
+                        <p className="text-blue-300 font-semibold mb-3 text-sm lg:text-base">
                           {item.period}
                         </p>
-                        <p className="text-white/70">{item.description}</p>
+                        <p className="text-white/70 text-sm lg:text-base leading-relaxed">{item.description}</p>
                       </div>
                     </div>
 
-                    {/* Timeline dot - positioned for both mobile and desktop */}
-                    <div className="absolute left-3 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-2 sm:border-4 border-slate-900"></div>
+                    {/* Timeline dot - positioned for mobile, tablet, and desktop */}
+                    <div className="absolute left-2.5 sm:left-3.5 md:left-1/2 md:transform md:-translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-2 md:border-4 border-slate-900"></div>
                   </motion.div>
                 ))}
               </div>
