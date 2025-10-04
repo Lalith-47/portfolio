@@ -111,16 +111,16 @@ export default function Custom500() {
                 Refresh
               </motion.button>
 
-              <Link href="/">
-                <motion.button
+              <Link href="/" passHref legacyBehavior>
+                <motion.a
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center gap-2 glass-button px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                  className="flex items-center justify-center gap-2 glass-button px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
                   aria-label="Go to home page"
                 >
-                  <FiHome size={18} />
+                  <FiHome size={18} aria-hidden="true" />
                   Go Home
-                </motion.button>
+                </motion.a>
               </Link>
             </motion.div>
 

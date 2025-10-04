@@ -69,7 +69,7 @@ export default function Contact() {
 
   /**
    * Form submission handler
-   * Simulates API call and handles success/error states
+   * Uses Web3Forms API for free, serverless form submission
    * @param data - Form data from React Hook Form
    */
   const onSubmit = async (data: FormData) => {
@@ -77,30 +77,42 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      // TODO: Replace with actual form submission endpoint
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
-
-      // Simulate form submission
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Simulate occasional failures for testing
-          if (Math.random() > 0.9) {
-            reject(new Error("Network error"));
-          } else {
-            resolve(true);
-          }
-        }, 2000);
+      // Web3Forms endpoint - Free tier: 250 submissions/month
+      // Sign up at: https://web3forms.com/ to get your access key
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // TODO: Get free key from https://web3forms.com/
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          subject: `New Portfolio Contact from ${data.name}`,
+          from_name: "Lalith's Portfolio Website",
+          to_email: "Lalith22p3347@gmail.com",
+          // Optional: Add honeypot for spam protection
+          botcheck: "",
+        }),
       });
 
-      console.log("Form submitted:", data);
-      setIsSubmitted(true);
-      reset();
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        console.log("Form submitted successfully:", data);
+        setIsSubmitted(true);
+        reset();
+      } else {
+        throw new Error(result.message || "Form submission failed");
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitError(
         error instanceof Error
           ? error.message
-          : "Failed to send message. Please try again later."
+          : "Failed to send message. Please try again later or email me directly at Lalith22p3347@gmail.com"
       );
     } finally {
       setIsSubmitting(false);

@@ -1,21 +1,40 @@
 {
-  "name": "Lalith Portfolio",
-  "short_name": "Lalith",
-  "description": "Portfolio of Lalith - A passionate Computer Science and Engineering student exploring open-source, Linux, and cloud technologies.",
+  "name": "Lalith's Portfolio - CSE Student & Developer",
+  "short_name": "Lalith Portfolio",
+  "description": "Portfolio of Lalith - A passionate Computer Science and Engineering student exploring open-source, Linux, and cloud technologies",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#0c4a6e",
   "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
       "sizes": "512x512",
-      "type": "image/png"
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "education", "technology"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "type": "image/png",
+      "sizes": "1200x630"
     }
   ]
 }

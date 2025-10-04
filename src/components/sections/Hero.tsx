@@ -63,6 +63,34 @@ export default function Hero() {
     }
   };
 
+  /**
+   * Handle resume download with fallback
+   * Opens resume in new tab or scrolls to contact if not available
+   */
+  const handleResumeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Check if resume exists by attempting to fetch it
+    fetch("/resume.pdf", { method: "HEAD" })
+      .then((response) => {
+        if (!response.ok) {
+          // Resume not found, prevent default and show message
+          e.preventDefault();
+          alert(
+            "Resume is being updated. Please contact me directly for my latest resume!"
+          );
+          scrollToContact();
+        }
+        // If resume exists, let the default link behavior happen
+      })
+      .catch(() => {
+        // Network error or file not found
+        e.preventDefault();
+        alert(
+          "Resume is being updated. Please contact me directly for my latest resume!"
+        );
+        scrollToContact();
+      });
+  };
+
   return (
     <section
       id="home"
@@ -154,6 +182,7 @@ export default function Hero() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleResumeClick}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="w-full xs:w-auto glass-button px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"

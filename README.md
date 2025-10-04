@@ -2,6 +2,8 @@
 
 A modern, glassmorphism-style portfolio website built with Next.js, TypeScript, and Tailwind CSS. This portfolio showcases the work and skills of Lalith, a passionate Computer Science and Engineering student.
 
+🚀 **[View Live Demo](https://lalith-portfolio.azurestaticapps.net)** (Coming Soon) | 📖 **[Setup Guide](SETUP_GUIDE.md)** | 🐛 **[Report Issue](https://github.com/Lalith-47/portfolio/issues)**
+
 ## 🌟 Features
 
 - **Glassmorphism Design**: Beautiful frosted glass effects with subtle gradients and glowing elements
@@ -36,7 +38,7 @@ A modern, glassmorphism-style portfolio website built with Next.js, TypeScript, 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/lalith/portfolio.git
+   git clone https://github.com/Lalith-47/portfolio.git
    cd portfolio
    ```
 
@@ -94,7 +96,7 @@ Update the following files with your personal information:
 
 5. **Contact Section** (`src/components/sections/Contact.tsx`):
    - Update contact information and social links
-   - Configure form submission endpoint
+   - Configure Web3Forms access key (see SETUP_GUIDE.md)
 
 ### Styling and Theme
 
@@ -214,9 +216,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Lalith** - [GitHub](https://github.com/lalith) - [LinkedIn](https://linkedin.com/in/lalith)
+**Lalith** - [GitHub](https://github.com/Lalith-47/) - [LinkedIn](https://www.linkedin.com/in/lalithkumarm143/) - [Email](mailto:Lalith22p3347@gmail.com)
 
-Project Link: [https://github.com/lalith/portfolio](https://github.com/lalith/portfolio)
+Project Link: [https://github.com/Lalith-47/portfolio](https://github.com/Lalith-47/portfolio)  
+Live Demo: [https://lalith-portfolio.azurestaticapps.net](https://lalith-portfolio.azurestaticapps.net) (Coming Soon)
 
 ---
 

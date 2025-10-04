@@ -97,24 +97,26 @@ export default function Custom404() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link href="/">
-                <motion.button
+              <Link href="/" passHref legacyBehavior>
+                <motion.a
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="glass-button glow-border px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-3"
+                  className="glass-button glow-border px-8 py-4 text-lg font-semibold rounded-xl flex items-center justify-center gap-3 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                  aria-label="Go to home page"
                 >
-                  <FiHome />
+                  <FiHome aria-hidden="true" />
                   Go Home
-                </motion.button>
+                </motion.a>
               </Link>
 
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.history.back()}
-                className="glass-button px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-3"
+                className="glass-button px-8 py-4 text-lg font-semibold rounded-xl flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                aria-label="Go back to previous page"
               >
-                <FiArrowLeft />
+                <FiArrowLeft aria-hidden="true" />
                 Go Back
               </motion.button>
             </motion.div>
