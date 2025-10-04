@@ -87,7 +87,7 @@ export default function About() {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start">
-          {/* Terminal Section */}
+          {/* Left Column: Terminal + What Drives Me */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{
@@ -99,7 +99,7 @@ export default function About() {
               },
             }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 space-y-6 sm:space-y-8"
           >
             <div
               className="terminal"
@@ -150,39 +150,8 @@ export default function About() {
                 )}
               </div>
             </div>
-          </motion.div>
 
-          {/* About Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
-          >
-            {/* Introduction Card */}
-            <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
-                Hello, World! 🌍
-              </h3>
-              <div className="space-y-4">
-                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                  I'm Lalith, a passionate second-year Computer Science and
-                  Engineering student with a deep love for technology and
-                  problem-solving. My journey in tech began with curiosity and has
-                  evolved into a genuine passion for creating meaningful software
-                  solutions.
-                </p>
-                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                  For over 1.5 years, I've been immersed in the Linux ecosystem,
-                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
-                  with various desktop environments including KDE Plasma,
-                  Cinnamon, and GNOME.
-                </p>
-              </div>
-            </div>
-
-            {/* What Drives Me Card */}
+            {/* What Drives Me Card - Now under terminal */}
             <div className="glass-card">
               <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
                 What Drives Me 🚀
@@ -222,6 +191,37 @@ export default function About() {
                   </span>
                 </li>
               </ul>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Introduction + Quote */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
+          >
+            {/* Introduction Card */}
+            <div className="glass-card">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
+                Hello, World! 🌍
+              </h3>
+              <div className="space-y-4">
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  I'm Lalith, a passionate second-year Computer Science and
+                  Engineering student with a deep love for technology and
+                  problem-solving. My journey in tech began with curiosity and has
+                  evolved into a genuine passion for creating meaningful software
+                  solutions.
+                </p>
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  For over 1.5 years, I've been immersed in the Linux ecosystem,
+                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
+                  with various desktop environments including KDE Plasma,
+                  Cinnamon, and GNOME.
+                </p>
+              </div>
             </div>
 
             {/* Philosophy Quote Card */}
