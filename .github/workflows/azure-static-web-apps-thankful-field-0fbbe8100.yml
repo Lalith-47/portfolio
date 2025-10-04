@@ -47,23 +47,19 @@ jobs:
           ls -la
           if [ -d "out" ]; then
             echo "✅ 'out' directory found!"
+            echo "Contents of 'out' directory:"
             ls -la out/
+            echo "Checking for index.html..."
+            if [ -f "out/index.html" ]; then
+              echo "✅ index.html found in out/ directory!"
+            else
+              echo "❌ index.html NOT found in out/ directory!"
+              exit 1
+            fi
           else
             echo "❌ 'out' directory NOT found!"
             exit 1
           fi
-
-      - name: Install OIDC Client from Core Package
-        run: npm install @actions/core@1.6.0 @actions/http-client
-
-      - name: Get Id Token
-        uses: actions/github-script@v6
-        id: idtoken
-        with:
-          script: |
-            const coredemo = require('@actions/core')
-            return await coredemo.getIDToken()
-          result-encoding: string
 
       - name: Build And Deploy
         id: builddeploy
@@ -73,12 +69,14 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           ###### Repository/Build Configurations ######
-          app_location: "/" # Root of repository
+          # For pre-built static sites (Next.js export):
+          # - app_location: where the BUILT files are
+          # - skip_app_build: true (don't rebuild)
+          # - output_location: empty (files are already in app_location)
+          app_location: "out" # Our pre-built static files
           api_location: "" # No API
-          output_location: "out" # Next.js build output (we built it ourselves)
-          skip_app_build: true # CRITICAL: Skip Azure's Oryx build
-          is_static_export: true # Tell Azure this is a static export
-          github_id_token: ${{ steps.idtoken.outputs.result }}
+          output_location: "" # Empty because files are already built
+          skip_app_build: true # Don't rebuild, files are ready
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
