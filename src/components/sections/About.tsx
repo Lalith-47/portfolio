@@ -151,7 +151,51 @@ export default function About() {
               </div>
             </div>
 
-            {/* What Drives Me Card - Now under terminal */}
+            {/* Philosophy Quote Card - Now under terminal */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="glass-card bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-400/30"
+            >
+              <blockquote className="text-base sm:text-lg text-center italic text-blue-300 leading-relaxed px-2">
+                "Learn deeply, build simply, and let the code speak."
+              </blockquote>
+              <p className="text-center text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm">
+                - My Development Philosophy
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column: Introduction + What Drives Me */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
+          >
+            {/* Introduction Card */}
+            <div className="glass-card">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
+                Hello, World! 🌍
+              </h3>
+              <div className="space-y-4">
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  I'm Lalith, a passionate second-year Computer Science and
+                  Engineering student with a deep love for technology and
+                  problem-solving. My journey in tech began with curiosity and has
+                  evolved into a genuine passion for creating meaningful software
+                  solutions.
+                </p>
+                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
+                  For over 1.5 years, I've been immersed in the Linux ecosystem,
+                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
+                  with various desktop environments including KDE Plasma,
+                  Cinnamon, and GNOME.
+                </p>
+              </div>
+            </div>
+
+            {/* What Drives Me Card - Now under Hello World */}
             <div className="glass-card">
               <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
                 What Drives Me 🚀
@@ -192,50 +236,6 @@ export default function About() {
                 </li>
               </ul>
             </div>
-          </motion.div>
-
-          {/* Right Column: Introduction + Quote */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2 space-y-6 sm:space-y-8"
-          >
-            {/* Introduction Card */}
-            <div className="glass-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-5">
-                Hello, World! 🌍
-              </h3>
-              <div className="space-y-4">
-                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                  I'm Lalith, a passionate second-year Computer Science and
-                  Engineering student with a deep love for technology and
-                  problem-solving. My journey in tech began with curiosity and has
-                  evolved into a genuine passion for creating meaningful software
-                  solutions.
-                </p>
-                <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                  For over 1.5 years, I've been immersed in the Linux ecosystem,
-                  exploring distributions like Ubuntu, Linux Mint, and Arch Linux
-                  with various desktop environments including KDE Plasma,
-                  Cinnamon, and GNOME.
-                </p>
-              </div>
-            </div>
-
-            {/* Philosophy Quote Card */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="glass-card bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-400/30"
-            >
-              <blockquote className="text-base sm:text-lg text-center italic text-blue-300 leading-relaxed px-2">
-                "Learn deeply, build simply, and let the code speak."
-              </blockquote>
-              <p className="text-center text-white/60 mt-2 sm:mt-3 text-xs sm:text-sm">
-                - My Development Philosophy
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </div>
