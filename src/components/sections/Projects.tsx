@@ -60,25 +60,38 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="section-padding container-responsive">
+      <div className="w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
+          <h2
+            className="font-bold text-gradient mb-4 sm:mb-6"
+            style={{
+              fontSize: "clamp(2rem, 6vw, 3.5rem)",
+              lineHeight: "clamp(2.5rem, 7vw, 4rem)",
+            }}
+          >
             Featured Projects
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p
+            className="text-white/70 max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontSize: "clamp(1rem, 3vw, 1.25rem)",
+              lineHeight: "clamp(1.5rem, 4vw, 1.875rem)",
+            }}
+          >
             A showcase of my work in web development, Linux systems, and cloud
             technologies
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Enhanced responsive project grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -87,38 +100,39 @@ export default function Projects() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="glass-card group relative overflow-hidden"
+              className="glass-card group relative overflow-hidden h-full flex flex-col"
             >
               {/* Background gradient */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
               ></div>
 
-              <div className="relative z-10">
-                {/* Project header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Enhanced project header with better mobile layout */}
+                <div className="flex items-start justify-between mb-4 sm:mb-6">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                     <div
-                      className={`p-3 rounded-lg bg-gradient-to-r ${project.gradient} bg-opacity-20 border border-white/20`}
+                      className={`p-2 sm:p-3 rounded-lg bg-gradient-to-r ${project.gradient} bg-opacity-20 border border-white/20 flex-shrink-0`}
                     >
-                      <project.icon className="text-2xl text-white" />
+                      <project.icon className="text-lg sm:text-2xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300 truncate">
                       {project.title}
                     </h3>
                   </div>
 
-                  <div className="flex gap-2">
+                  {/* Enhanced action buttons with better touch targets */}
+                  <div className="flex gap-2 flex-shrink-0 ml-2">
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-2 rounded-lg glass hover:bg-white/20 transition-colors duration-300"
-                      aria-label="View on GitHub"
+                      className="p-2 sm:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                      aria-label={`View ${project.title} on GitHub`}
                     >
-                      <FiGithub className="text-lg" />
+                      <FiGithub className="text-base sm:text-lg" />
                     </motion.a>
 
                     {project.live && (
@@ -128,26 +142,26 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 rounded-lg glass hover:bg-white/20 transition-colors duration-300"
-                        aria-label="View live demo"
+                        className="p-2 sm:p-3 rounded-lg glass hover:bg-white/20 transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                        aria-label={`View ${project.title} live demo`}
                       >
-                        <FiExternalLink className="text-lg" />
+                        <FiExternalLink className="text-base sm:text-lg" />
                       </motion.a>
                     )}
                   </div>
                 </div>
 
-                {/* Project description */}
-                <p className="text-white/80 leading-relaxed mb-6">
+                {/* Project description with responsive text */}
+                <p className="text-white/80 leading-relaxed mb-4 sm:mb-6 flex-grow text-sm sm:text-base">
                   {project.description}
                 </p>
 
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
+                {/* Enhanced technology tags with better mobile layout */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full text-white/90 hover:bg-white/20 transition-colors duration-300"
+                      className="px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm bg-white/10 border border-white/20 rounded-full text-white/90 hover:bg-white/20 transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -161,19 +175,31 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* GitHub CTA */}
+        {/* Enhanced GitHub CTA section with responsive design */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center"
         >
           <div className="glass-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gradient mb-4">
+            <h3
+              className="font-bold text-gradient mb-3 sm:mb-4"
+              style={{
+                fontSize: "clamp(1.25rem, 4vw, 2rem)",
+                lineHeight: "clamp(1.75rem, 5vw, 2.5rem)",
+              }}
+            >
               Explore More Projects
             </h3>
-            <p className="text-white/70 mb-6">
+            <p
+              className="text-white/70 mb-4 sm:mb-6 leading-relaxed"
+              style={{
+                fontSize: "clamp(0.875rem, 2.5vw, 1rem)",
+                lineHeight: "clamp(1.25rem, 3.5vw, 1.5rem)",
+              }}
+            >
               Check out my GitHub profile for more projects, contributions, and
               code samples. I'm always working on something new!
             </p>
@@ -183,7 +209,7 @@ export default function Projects() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 glass-button glow-border px-8 py-4 text-lg font-semibold rounded-xl"
+              className="inline-flex items-center gap-2 glass-button glow-border px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
               aria-label="Visit Lalith's GitHub profile"
             >
               <FiGithub />

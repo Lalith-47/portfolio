@@ -7,10 +7,38 @@
 @layer base {
     html {
         @apply scroll-smooth;
+        /* Improve text rendering on all devices */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 
     body {
         @apply font-inter bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white min-h-screen;
+        /* Prevent horizontal scroll on mobile */
+        overflow-x: hidden;
+    }
+
+    /* Responsive base font sizes */
+    @media (max-width: 640px) {
+        html {
+            font-size: 14px;
+            /* Smaller base for mobile */
+        }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+        html {
+            font-size: 15px;
+            /* Medium base for tablet */
+        }
+    }
+
+    @media (min-width: 1025px) {
+        html {
+            font-size: 16px;
+            /* Standard base for desktop */
+        }
     }
 }
 
@@ -20,11 +48,14 @@
     }
 
     .glass-card {
-        @apply glass p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25;
+        @apply glass p-4 sm:p-6 lg:p-8 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25;
     }
 
     .glass-button {
-        @apply glass px-6 py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer;
+        @apply glass px-4 py-2 sm:px-6 sm:py-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer;
+        /* Enhanced touch targets for mobile */
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .text-gradient {
@@ -36,17 +67,74 @@
     }
 
     .terminal {
-        @apply bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-4 font-mono text-green-400;
+        @apply bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-3 sm:p-4 lg:p-6 font-mono text-green-400;
+        /* Responsive font sizes for terminal */
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
     }
 
-    /* Social link hover effects */
+    /* Enhanced social link hover effects with better touch targets */
     .social-link {
-        @apply glass p-3 rounded-full hover:text-blue-400 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        @apply glass p-3 sm:p-4 rounded-full hover:text-blue-400 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        /* Ensure minimum touch target size */
+        min-height: 48px;
+        min-width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .social-button {
-        @apply flex items-center gap-2 glass-button px-4 py-2 rounded-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        @apply flex items-center gap-2 glass-button px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent;
+        min-height: 44px;
     }
+
+    /* Responsive typography utilities */
+    .text-responsive-sm {
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+    }
+
+    .text-responsive-base {
+        font-size: clamp(1rem, 3vw, 1.125rem);
+    }
+
+    .text-responsive-lg {
+        font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+    }
+
+    .text-responsive-xl {
+        font-size: clamp(1.25rem, 4vw, 1.5rem);
+    }
+
+    .text-responsive-2xl {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .text-responsive-3xl {
+        font-size: clamp(1.875rem, 6vw, 2.5rem);
+    }
+
+    .text-responsive-4xl {
+        font-size: clamp(2.25rem, 7vw, 3rem);
+    }
+
+    .text-responsive-5xl {
+        font-size: clamp(3rem, 8vw, 4rem);
+    }
+
+    /* Container utilities for consistent spacing */
+    .container-responsive {
+        @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+        max-width: 1400px;
+    }
+
+    .section-padding {
+        @apply py-12 sm:py-16 md:py-20 lg:py-24;
+    }
+
+    .section-padding-sm {
+        @apply py-8 sm:py-12 md:py-16;
+    }
+}
 }
 
 /* Custom scrollbar */

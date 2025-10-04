@@ -1,10 +1,10 @@
 /**
  * Hero Section Component
- * 
+ *
  * Main landing section featuring Lalith's introduction, social links,
  * and call-to-action buttons. Includes glassmorphism design with
  * smooth Framer Motion animations.
- * 
+ *
  * Features:
  * - Animated greeting with waving hand emoji
  * - Professional introduction text
@@ -12,7 +12,7 @@
  * - Social media links with hover effects
  * - Connect with Me section featuring GitHub and LinkedIn
  * - Smooth scroll indicator
- * 
+ *
  * @author Lalith
  * @version 1.0.0
  */
@@ -47,7 +47,7 @@ const socialLinks = [
 
 /**
  * Hero Component
- * 
+ *
  * Renders the main hero section with responsive design and accessibility features.
  * Includes smooth animations and interactive elements for enhanced user experience.
  */
@@ -66,22 +66,26 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center container-responsive section-padding"
       aria-label="Hero section"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="w-full max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8 lg:space-y-10"
         >
-          {/* Greeting */}
+          {/* Main heading with responsive typography */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold"
+            className="font-bold leading-tight"
+            style={{
+              fontSize: "clamp(2rem, 8vw, 5rem)",
+              lineHeight: "clamp(2.5rem, 9vw, 5.5rem)",
+            }}
           >
             Hi, I'm <span className="text-gradient">Lalith</span>{" "}
             <motion.span
@@ -94,12 +98,16 @@ export default function Hero() {
             </motion.span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Subtitle with better responsive scaling */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl sm:text-2xl lg:text-3xl text-white/80 max-w-3xl mx-auto"
+            className="text-white/80 max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontSize: "clamp(1.125rem, 4vw, 2rem)",
+              lineHeight: "clamp(1.5rem, 5vw, 2.5rem)",
+            }}
           >
             A CSE student exploring{" "}
             <span className="text-gradient font-semibold">open-source</span>,{" "}
@@ -107,24 +115,28 @@ export default function Hero() {
             <span className="text-gradient font-semibold">the cloud</span>.
           </motion.p>
 
-          {/* Description */}
+          {/* Description with responsive font sizing */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed"
+            className="text-white/70 max-w-3xl mx-auto leading-relaxed px-4"
+            style={{
+              fontSize: "clamp(1rem, 3vw, 1.25rem)",
+              lineHeight: "clamp(1.5rem, 4vw, 1.875rem)",
+            }}
           >
             Passionate about building elegant solutions, mastering Linux
             systems, and deploying applications on Microsoft Azure. Always
             learning, always coding.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Enhanced CTA Buttons with better mobile layout */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col xs:flex-row gap-4 xs:gap-6 justify-center items-center px-4"
             role="group"
             aria-label="Call to action buttons"
           >
@@ -132,7 +144,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="glass-button glow-border px-8 py-4 text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full xs:w-auto glass-button glow-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
               aria-label="Navigate to contact section"
             >
               Get In Touch
@@ -144,7 +156,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="glass-button px-8 py-4 text-lg font-semibold rounded-xl flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+              className="w-full xs:w-auto glass-button px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
               aria-label="Download resume (opens in new tab)"
             >
               <FiDownload aria-hidden="true" />
@@ -152,12 +164,12 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Enhanced Social Links with better spacing */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-4 sm:space-x-6 px-4"
             role="list"
             aria-label="Social media links"
           >
@@ -169,7 +181,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
                 whileTap={{ scale: 0.9 }}
-                className="glass p-3 rounded-full hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                className="social-link"
                 aria-label={label}
                 role="listitem"
               >
@@ -178,29 +190,31 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Connect with Me Section */}
+          {/* Enhanced Connect with Me Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="max-w-md mx-auto"
+            className="max-w-md mx-auto px-4"
           >
             <div className="glass-card text-center">
-              <h3 className="text-lg font-semibold text-gradient mb-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-gradient mb-4 sm:mb-6">
                 Connect with Me
               </h3>
-              <div className="flex justify-center space-x-4">
+              <div className="flex flex-col xs:flex-row justify-center gap-3 xs:gap-4">
                 <motion.a
                   href="https://github.com/Lalith-47/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 glass-button px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                  className="social-button justify-center"
                   aria-label="Visit Lalith's GitHub profile"
                 >
                   <FiGithub size={18} aria-hidden="true" />
-                  <span className="text-sm font-medium">GitHub</span>
+                  <span className="text-sm sm:text-base font-medium">
+                    GitHub
+                  </span>
                 </motion.a>
 
                 <motion.a
@@ -209,22 +223,24 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 glass-button px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent"
+                  className="social-button justify-center"
                   aria-label="Visit Lalith's LinkedIn profile"
                 >
                   <FiLinkedin size={18} aria-hidden="true" />
-                  <span className="text-sm font-medium">LinkedIn</span>
+                  <span className="text-sm sm:text-base font-medium">
+                    LinkedIn
+                  </span>
                 </motion.a>
               </div>
             </div>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Enhanced Scroll Indicator with better positioning */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
             aria-label="Scroll down indicator"
           >
             <motion.div

@@ -1,13 +1,13 @@
 /**
  * Contact Section Component
- * 
+ *
  * Professional contact form and information section featuring:
  * - Responsive contact form with validation using React Hook Form
  * - Contact information cards with social links
  * - Form submission handling with loading states and error handling
  * - Accessibility-compliant form elements with proper ARIA labels
  * - Glassmorphism design with smooth animations
- * 
+ *
  * @author Lalith
  * @version 1.0.0
  */
@@ -47,7 +47,7 @@ interface ContactInfoItem {
 
 /**
  * Contact Component
- * 
+ *
  * Main contact section with form validation and submission handling.
  * Integrates with React Hook Form for robust form management.
  */
@@ -154,8 +154,8 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="section-padding container-responsive">
+      <div className="w-full max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

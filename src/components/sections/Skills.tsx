@@ -92,25 +92,38 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="section-padding container-responsive">
+      <div className="w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
+          <h2
+            className="font-bold text-gradient mb-4 sm:mb-6"
+            style={{
+              fontSize: "clamp(2rem, 6vw, 3.5rem)",
+              lineHeight: "clamp(2.5rem, 7vw, 4rem)",
+            }}
+          >
             Skills & Technologies
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p
+            className="text-white/70 max-w-4xl mx-auto leading-relaxed"
+            style={{
+              fontSize: "clamp(1rem, 3vw, 1.25rem)",
+              lineHeight: "clamp(1.5rem, 4vw, 1.875rem)",
+            }}
+          >
             A comprehensive toolkit built through hands-on experience and
             continuous learning
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Enhanced responsive grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16 sm:mb-20">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -118,18 +131,19 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="glass-card group"
+              className="glass-card group h-full"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30">
-                  <category.icon className="text-2xl text-blue-400" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="p-2 sm:p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 flex-shrink-0">
+                  <category.icon className="text-xl sm:text-2xl text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-gradient transition-all duration-300">
                   {category.title}
                 </h3>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              {/* Enhanced skill grid with better mobile layout */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -141,13 +155,13 @@ export default function Skills() {
                     }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex flex-col items-center p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20"
+                    className="flex flex-col items-center p-2 sm:p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 min-h-[80px] sm:min-h-[90px]"
                   >
                     <skill.icon
-                      className="text-2xl mb-2 transition-colors duration-300"
+                      className="text-lg sm:text-2xl mb-1 sm:mb-2 transition-colors duration-300 flex-shrink-0"
                       style={{ color: skill.color }}
                     />
-                    <span className="text-sm text-white/80 text-center font-medium">
+                    <span className="text-xs sm:text-sm text-white/80 text-center font-medium leading-tight">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -157,24 +171,30 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Experience Timeline */}
+        {/* Enhanced Experience Timeline with better mobile layout */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-16 sm:mt-20"
         >
-          <h3 className="text-3xl font-bold text-gradient text-center mb-12">
+          <h3
+            className="font-bold text-gradient text-center mb-8 sm:mb-12"
+            style={{
+              fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
+              lineHeight: "clamp(2rem, 6vw, 3rem)",
+            }}
+          >
             Learning Journey
           </h3>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
+              {/* Enhanced timeline line for mobile and desktop */}
+              <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-cyan-400"></div>
 
-              <div className="space-y-12">
+              <div className="space-y-8 sm:space-y-12">
                 {[
                   {
                     period: "2024 - Present",
@@ -205,11 +225,29 @@ export default function Skills() {
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
                     className={`flex items-center ${
-                      item.side === "left" ? "justify-start" : "justify-end"
-                    }`}
+                      item.side === "left"
+                        ? "sm:justify-start"
+                        : "sm:justify-end"
+                    } relative`}
                   >
+                    {/* Mobile layout */}
+                    <div className="sm:hidden w-full pl-12">
+                      <div className="glass-card">
+                        <h4 className="text-base sm:text-lg font-bold text-gradient mb-1 sm:mb-2">
+                          {item.title}
+                        </h4>
+                        <p className="text-blue-300 font-semibold mb-2 sm:mb-3 text-sm">
+                          {item.period}
+                        </p>
+                        <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Desktop layout */}
                     <div
-                      className={`w-5/12 ${
+                      className={`hidden sm:block w-5/12 ${
                         item.side === "right" ? "text-right" : ""
                       }`}
                     >
@@ -224,8 +262,8 @@ export default function Skills() {
                       </div>
                     </div>
 
-                    {/* Timeline dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-4 border-slate-900"></div>
+                    {/* Timeline dot - positioned for both mobile and desktop */}
+                    <div className="absolute left-3 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-2 sm:border-4 border-slate-900"></div>
                   </motion.div>
                 ))}
               </div>

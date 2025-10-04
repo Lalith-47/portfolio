@@ -1,12 +1,12 @@
 /**
  * Tailwind CSS Configuration
- * 
+ *
  * Custom configuration for Lalith's portfolio website featuring:
  * - Glassmorphism design system with custom colors
  * - Inter and Poppins font integration
  * - Custom spacing and screen breakpoints
  * - Production optimizations for smaller bundle size
- * 
+ *
  * @author Lalith
  * @version 1.0.0
  */
@@ -71,14 +71,67 @@ module.exports = {
           "100%": { opacity: "0" },
         },
       },
-      // Add only the spacing values we actually use
-      spacing: {
-        18: "4.5rem",
-        88: "22rem",
-      },
-      // Add only the screens we need
+      // Enhanced responsive breakpoints for better device coverage
       screens: {
-        xs: "475px",
+        xs: "475px", // Extra small devices (large phones)
+        sm: "640px", // Small devices (landscape phones, small tablets)
+        md: "768px", // Medium devices (tablets)
+        lg: "1024px", // Large devices (laptops)
+        xl: "1280px", // Extra large devices (desktops)
+        "2xl": "1536px", // 2X large devices (large desktops)
+        // Custom breakpoints for specific use cases
+        mobile: { max: "767px" }, // Mobile-first approach
+        tablet: { min: "768px", max: "1023px" }, // Tablet range
+        desktop: { min: "1024px" }, // Desktop and above
+      },
+      // Enhanced spacing scale for better responsive design
+      spacing: {
+        18: "4.5rem", // 72px
+        88: "22rem", // 352px
+        104: "26rem", // 416px
+        112: "28rem", // 448px
+        128: "32rem", // 512px
+        144: "36rem", // 576px
+      },
+      // Responsive font sizes with better scaling
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.5rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
+        "5xl": ["3rem", { lineHeight: "1" }],
+        "6xl": ["3.75rem", { lineHeight: "1" }],
+        "7xl": ["4.5rem", { lineHeight: "1" }],
+        "8xl": ["6rem", { lineHeight: "1" }],
+        "9xl": ["8rem", { lineHeight: "1" }],
+        // Responsive display sizes
+        "display-sm": ["2.5rem", { lineHeight: "3rem" }],
+        "display-md": ["3.5rem", { lineHeight: "4rem" }],
+        "display-lg": ["4.5rem", { lineHeight: "5rem" }],
+        "display-xl": ["6rem", { lineHeight: "6rem" }],
+      },
+      // Container queries for component-based responsive design
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "1.5rem",
+          md: "2rem",
+          lg: "2.5rem",
+          xl: "3rem",
+          "2xl": "4rem",
+        },
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1400px", // Slightly smaller max-width for better readability
+        },
       },
     },
   },

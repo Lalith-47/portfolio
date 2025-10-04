@@ -79,8 +79,8 @@ export default function Navbar() {
         scrolled ? "glass border-b border-white/10" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="container-responsive">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -157,7 +157,7 @@ export default function Navbar() {
             className="md:hidden glass border-t border-white/10"
           >
             <nav
-              className="px-4 py-4 space-y-3"
+              className="px-4 py-4 space-y-2"
               role="navigation"
               aria-label="Mobile navigation"
             >
@@ -167,7 +167,7 @@ export default function Navbar() {
                   whileHover={{ x: 10 }}
                   onClick={() => scrollToSection(item.href)}
                   onKeyDown={(e) => handleKeyDown(e, item.href)}
-                  className="block w-full text-left text-white/80 hover:text-white transition-colors duration-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2"
+                  className="block w-full text-left text-white/80 hover:text-white transition-colors duration-300 py-3 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded text-base font-medium min-h-[48px] flex items-center"
                   aria-label={`Navigate to ${item.name} section`}
                 >
                   {item.name}
