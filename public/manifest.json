@@ -1,0 +1,21 @@
+{
+  "name": "Lalith Portfolio",
+  "short_name": "Lalith",
+  "description": "Portfolio of Lalith - A passionate Computer Science and Engineering student exploring open-source, Linux, and cloud technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
