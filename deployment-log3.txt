@@ -1,0 +1,450 @@
+Build and Deploy Job	Set up job	´╗┐2025-10-04T16:56:26.1629246Z Current runner version: '2.328.0'
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1653178Z ##[group]Runner Image Provisioner
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1654111Z Hosted Compute Agent
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1654649Z Version: 20250912.392
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1655251Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1656312Z Build Date: 2025-09-12T15:23:14Z
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1656906Z ##[endgroup]
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1657477Z ##[group]Operating System
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1658107Z Ubuntu
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1658538Z 24.04.3
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1658985Z LTS
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1659433Z ##[endgroup]
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1659946Z ##[group]Runner Image
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1660523Z Image: ubuntu-24.04
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1661030Z Version: 20250929.60.1
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1662055Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1663406Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1664557Z ##[endgroup]
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1665613Z ##[group]GITHUB_TOKEN Permissions
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1667544Z Contents: read
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1668069Z Metadata: read
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1668632Z ##[endgroup]
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1670852Z Secret source: Actions
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1671562Z Prepare workflow directory
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.1984763Z Prepare all required actions
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.2021740Z Getting action download info
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.6513668Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+Build and Deploy Job	Set up job	2025-10-04T16:56:26.8391190Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Build and Deploy Job	Set up job	2025-10-04T16:56:27.0043471Z Download action repository 'Azure/static-web-apps-deploy@v1' (SHA:4d27395796ac319302594769cfe812bd207490b1)
+Build and Deploy Job	Set up job	2025-10-04T16:56:27.4698858Z Complete job name: Build and Deploy Job
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	´╗┐2025-10-04T16:56:27.5148175Z ##[group]Build container for action use: '/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile'.
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:27.5199771Z ##[command]/usr/bin/docker build -t a6d496:bc9b0d1829734f1195bd42159a1ebc1b -f "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile" "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1"
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0470072Z #0 building with "default" instance using docker driver
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0471249Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0471660Z #1 [internal] load build definition from Dockerfile
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0472729Z #1 transferring dockerfile: 160B done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0473640Z #1 DONE 0.0s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0473978Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0474857Z #2 [internal] load metadata for mcr.microsoft.com/appsvc/staticappsclient:stable
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.0476319Z #2 DONE 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1629140Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1633400Z #3 [internal] load .dockerignore
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1637046Z #3 transferring context: 2B done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1638416Z #3 DONE 0.0s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1638998Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1639478Z #4 [internal] load build context
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1640808Z #4 transferring context: 107B done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1642076Z #4 DONE 0.0s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1642638Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1644901Z #5 [1/2] FROM mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:3178a283e885dc45a0c7b4c6e9f728f0331ae7fb93de75db4181fa38651170f2
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1650808Z #5 resolve mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:3178a283e885dc45a0c7b4c6e9f728f0331ae7fb93de75db4181fa38651170f2 done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1665691Z #5 sha256:1df8e0748f30e89b0c0477edfc706fc39242e1d6008433c0494113de267e7ca8 15.34kB / 15.34kB done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1670498Z #5 sha256:5d6e107a26c2ffb6e234f04132358dea70a691a64c1152f984d2f2ba0e218c58 22.02MB / 53.74MB 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1674656Z #5 sha256:2377065f3b700cf1b5e391d26c572c8b91892dd44acd75deebdab5e403b23175 8.39MB / 15.56MB 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1678873Z #5 sha256:3178a283e885dc45a0c7b4c6e9f728f0331ae7fb93de75db4181fa38651170f2 2.88kB / 2.88kB done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.1683485Z #5 sha256:5ee26b7a209f9a26720207792b237af3e19c0efeed8695e1e630fcd0feef9230 14.49MB / 54.75MB 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.2663943Z #5 sha256:5d6e107a26c2ffb6e234f04132358dea70a691a64c1152f984d2f2ba0e218c58 51.44MB / 53.74MB 0.2s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.2669260Z #5 sha256:2377065f3b700cf1b5e391d26c572c8b91892dd44acd75deebdab5e403b23175 15.56MB / 15.56MB 0.1s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.2674273Z #5 sha256:5ee26b7a209f9a26720207792b237af3e19c0efeed8695e1e630fcd0feef9230 50.68MB / 54.75MB 0.2s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.2679272Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 12.58MB / 197.07MB 0.2s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4413684Z #5 sha256:5d6e107a26c2ffb6e234f04132358dea70a691a64c1152f984d2f2ba0e218c58 53.74MB / 53.74MB 0.2s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4418974Z #5 sha256:5ee26b7a209f9a26720207792b237af3e19c0efeed8695e1e630fcd0feef9230 54.75MB / 54.75MB 0.2s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4422769Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 46.14MB / 197.07MB 0.3s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4427310Z #5 extracting sha256:5d6e107a26c2ffb6e234f04132358dea70a691a64c1152f984d2f2ba0e218c58 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4431542Z #5 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.3s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4435417Z #5 sha256:aede74d79976f9d1be608a1286cdb2ca61aad25185440263691db6a0880adadd 9.44MB / 24.46MB 0.3s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4446694Z #5 sha256:c279a6399750ee20e802fb2c47da034ccee5eb4f3b89087f32618f10e8af074a 1.56MB / 1.56MB 0.3s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.4450968Z #5 sha256:ec0af1da0a0576de654092a28624c0565c6d854216944f18159460338af43293 0B / 72.99MB 0.3s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5619999Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 100.66MB / 197.07MB 0.5s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5621631Z #5 sha256:aede74d79976f9d1be608a1286cdb2ca61aad25185440263691db6a0880adadd 24.46MB / 24.46MB 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5623030Z #5 sha256:ec0af1da0a0576de654092a28624c0565c6d854216944f18159460338af43293 67.11MB / 72.99MB 0.5s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5624863Z #5 sha256:351447e6e3829fac25a761f87d07dc5bfc289f38908901d05fa53aaab54dbdcd 115.52kB / 115.52kB 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5626603Z #5 sha256:eec8099d3f58ba87e25216a07db18b5a0de40b6921ee61ea8ab9b4c29b53a12f 1.16MB / 1.16MB 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5627948Z #5 sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 0B / 35.20MB 0.5s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.5629296Z #5 sha256:cddc70a1cccef26d55fcf9242759c41404c305acea0b4c3a30961c99846a0a55 637.94kB / 637.94kB 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.6626718Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 137.33MB / 197.07MB 0.6s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.6628371Z #5 sha256:ec0af1da0a0576de654092a28624c0565c6d854216944f18159460338af43293 72.99MB / 72.99MB 0.5s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.6629971Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 2.10MB / 118.65MB 0.6s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.6631415Z #5 sha256:8023cb51985fccd3faa4be6340cdc75b72240277850569aa974767dda5176159 168B / 168B 0.6s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.6632895Z #5 sha256:4a1fde1690fe113870084a3224c66554fc9cbd2310abb9593b0244ec21f4b76d 168B / 168B 0.6s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.7623697Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 171.97MB / 197.07MB 0.7s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.7625408Z #5 sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 8.39MB / 35.20MB 0.7s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.7627080Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 35.65MB / 118.65MB 0.7s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.8624873Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 197.07MB / 197.07MB 0.8s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.8628206Z #5 sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 32.51MB / 35.20MB 0.8s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.8629622Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 72.35MB / 118.65MB 0.8s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.9626902Z #5 sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 35.20MB / 35.20MB 0.9s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:28.9630757Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 104.86MB / 118.65MB 0.9s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:29.1620403Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 118.65MB / 118.65MB 1.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:29.5616196Z #5 sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 197.07MB / 197.07MB 1.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:29.5617657Z #5 sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 35.20MB / 35.20MB 1.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:29.5618951Z #5 sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 118.65MB / 118.65MB 1.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:30.9519691Z #5 extracting sha256:5d6e107a26c2ffb6e234f04132358dea70a691a64c1152f984d2f2ba0e218c58 2.6s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:31.0778498Z #5 extracting sha256:2377065f3b700cf1b5e391d26c572c8b91892dd44acd75deebdab5e403b23175 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:31.5033516Z #5 extracting sha256:2377065f3b700cf1b5e391d26c572c8b91892dd44acd75deebdab5e403b23175 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:31.6213629Z #5 extracting sha256:5ee26b7a209f9a26720207792b237af3e19c0efeed8695e1e630fcd0feef9230
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:33.6776908Z #5 extracting sha256:5ee26b7a209f9a26720207792b237af3e19c0efeed8695e1e630fcd0feef9230 1.9s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:33.7636187Z #5 extracting sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:38.4966355Z #5 extracting sha256:41c7cd6fb37363fd1ec16dad3463ecc5820eda12c418a82b4849604252d29b88 4.7s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:39.6137637Z #5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:39.7535845Z #5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:39.7538201Z #5 extracting sha256:aede74d79976f9d1be608a1286cdb2ca61aad25185440263691db6a0880adadd 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:40.4942834Z #5 extracting sha256:aede74d79976f9d1be608a1286cdb2ca61aad25185440263691db6a0880adadd 0.7s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:40.4946380Z #5 extracting sha256:c279a6399750ee20e802fb2c47da034ccee5eb4f3b89087f32618f10e8af074a 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:40.6273427Z #5 extracting sha256:c279a6399750ee20e802fb2c47da034ccee5eb4f3b89087f32618f10e8af074a 0.1s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:40.6274639Z #5 extracting sha256:ec0af1da0a0576de654092a28624c0565c6d854216944f18159460338af43293 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.6138346Z #5 extracting sha256:ec0af1da0a0576de654092a28624c0565c6d854216944f18159460338af43293 0.9s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.6624640Z #5 extracting sha256:351447e6e3829fac25a761f87d07dc5bfc289f38908901d05fa53aaab54dbdcd
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.7923754Z #5 extracting sha256:351447e6e3829fac25a761f87d07dc5bfc289f38908901d05fa53aaab54dbdcd done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.7924943Z #5 extracting sha256:eec8099d3f58ba87e25216a07db18b5a0de40b6921ee61ea8ab9b4c29b53a12f 0.0s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.7926239Z #5 extracting sha256:cddc70a1cccef26d55fcf9242759c41404c305acea0b4c3a30961c99846a0a55 0.0s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:41.9125411Z #5 extracting sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:42.2345144Z #5 extracting sha256:36312d7930e0666f8cfc7940823ac101235e873b7cbb8b20d9481fd404095767 0.4s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:42.2346903Z #5 extracting sha256:4a1fde1690fe113870084a3224c66554fc9cbd2310abb9593b0244ec21f4b76d
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:42.3745429Z #5 extracting sha256:4a1fde1690fe113870084a3224c66554fc9cbd2310abb9593b0244ec21f4b76d done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:42.3746699Z #5 extracting sha256:8023cb51985fccd3faa4be6340cdc75b72240277850569aa974767dda5176159 done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:42.3747597Z #5 extracting sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 0.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:45.6582762Z #5 extracting sha256:4836a863d60df9ca0cedad0eb5e729c4a7f755449fbfbd6d4ea6443e64c990e0 3.2s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:46.1339855Z #5 DONE 18.1s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:46.3027643Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:46.3028127Z #6 [2/2] COPY entrypoint.sh /entrypoint.sh
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:46.3028632Z #6 DONE 0.0s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3410839Z 
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3411337Z #7 exporting to image
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3411751Z #7 exporting layers
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3412409Z #7 exporting layers 1.2s done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3588907Z #7 writing image sha256:474c6b55e3c8faf5585cfd06fb79417b090c3d7d63a87f70b59e9a130be4f072 done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3589964Z #7 naming to docker.io/library/a6d496:bc9b0d1829734f1195bd42159a1ebc1b done
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3598509Z #7 DONE 1.2s
+Build and Deploy Job	Build Azure/static-web-apps-deploy@v1	2025-10-04T16:56:47.3638387Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	´╗┐2025-10-04T16:56:47.3903042Z ##[group]Run actions/checkout@v4
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3903571Z with:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3903757Z   submodules: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3903938Z   lfs: false
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3904134Z   repository: Lalith-47/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3904500Z   token: ***
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3904673Z   ssh-strict: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3904852Z   ssh-user: git
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3905040Z   persist-credentials: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3905250Z   clean: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3905442Z   sparse-checkout-cone-mode: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3905665Z   fetch-depth: 1
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3906218Z   fetch-tags: false
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3906432Z   show-progress: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3906629Z   set-safe-directory: true
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.3907124Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.4999215Z Syncing repository: Lalith-47/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5001124Z ##[group]Getting Git version info
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5001773Z Working directory is '/home/runner/work/portfolio/portfolio'
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5002714Z [command]/usr/bin/git version
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5005298Z git version 2.51.0
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5031930Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5047744Z Temporarily overriding HOME='/home/runner/work/_temp/fbe6cf3f-47b1-46f3-9604-01397c5bc5cc' before making global git config changes
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5049096Z Adding repository directory to the temporary git global config as a safe directory
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5061330Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portfolio/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5099964Z Deleting the contents of '/home/runner/work/portfolio/portfolio'
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5103851Z ##[group]Initializing the repository
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5108095Z [command]/usr/bin/git init /home/runner/work/portfolio/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5275416Z hint: Using 'master' as the name for the initial branch. This default branch name
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5276678Z hint: is subject to change. To configure the initial branch name to use in all
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5277386Z hint: of your new repositories, which will suppress this warning, call:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5278037Z hint:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5278506Z hint: 	git config --global init.defaultBranch <name>
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5279069Z hint:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5279578Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5280412Z hint: 'development'. The just-created branch can be renamed via this command:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5281175Z hint:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5281524Z hint: 	git branch -m <name>
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5281943Z hint:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5282486Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5283510Z Initialized empty Git repository in /home/runner/work/portfolio/portfolio/.git/
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5294171Z [command]/usr/bin/git remote add origin https://github.com/Lalith-47/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5328044Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5328540Z ##[group]Disabling automatic garbage collection
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5332245Z [command]/usr/bin/git config --local gc.auto 0
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5360042Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5360429Z ##[group]Setting up auth
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5367187Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5396027Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5714343Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5743813Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.5964929Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.6008005Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.6009082Z ##[group]Fetching the repository
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:47.6017221Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bf48aa2b7538bd95f3706a376ea40185fd60909e:refs/remotes/origin/main
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0256781Z From https://github.com/Lalith-47/portfolio
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0257605Z  * [new ref]         bf48aa2b7538bd95f3706a376ea40185fd60909e -> origin/main
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0290024Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0290625Z ##[group]Determining the checkout info
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0292873Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0298270Z [command]/usr/bin/git sparse-checkout disable
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0653430Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0687160Z ##[group]Checking out the ref
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0692560Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0792745Z Switched to a new branch 'main'
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0793855Z branch 'main' set up to track 'origin/main'.
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0800665Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0801308Z ##[group]Setting up auth for fetching submodules
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0807176Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0848471Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0881260Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0914829Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-192936770@github.com:
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0941949Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0942397Z ##[group]Fetching submodules
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.0947664Z [command]/usr/bin/git submodule sync
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1191782Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1432952Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1666435Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1667088Z ##[group]Persisting credentials for submodules
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1673308Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.1907899Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.2149166Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.2385374Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-192936770@github.com:'
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.2619335Z ##[endgroup]
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.2657913Z [command]/usr/bin/git log -1 --format=%H
+Build and Deploy Job	Run actions/checkout@v4	2025-10-04T16:56:48.2680790Z bf48aa2b7538bd95f3706a376ea40185fd60909e
+Build and Deploy Job	Setup Node.js	´╗┐2025-10-04T16:56:48.2889570Z ##[group]Run actions/setup-node@v4
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2889843Z with:
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2890025Z   node-version: 18
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2954392Z   always-auth: false
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2954696Z   check-latest: false
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2955081Z   token: ***
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.2955263Z ##[endgroup]
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.4723903Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.4727243Z ##[group]Environment details
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.9386194Z node: v18.20.8
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.9386837Z npm: 10.8.2
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.9387086Z yarn: 1.22.22
+Build and Deploy Job	Setup Node.js	2025-10-04T16:56:48.9388224Z ##[endgroup]
+Build and Deploy Job	Install dependencies	´╗┐2025-10-04T16:56:48.9486496Z ##[group]Run npm install
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:48.9486808Z [36;1mnpm install[0m
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:48.9530007Z shell: /usr/bin/bash -e {0}
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:48.9530252Z ##[endgroup]
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.3573822Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.5618690Z npm warn deprecated tsparticles-plugin-easing-quad@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.5872030Z npm warn deprecated tsparticles-shape-square@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.7464427Z npm warn deprecated tsparticles-shape-line@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.8037744Z npm warn deprecated tsparticles-interaction-external-pause@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.8051435Z npm warn deprecated tsparticles-move-parallax@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.8291455Z npm warn deprecated tsparticles-shape-text@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.8300252Z npm warn deprecated tsparticles-interaction-particles-attract@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.9379972Z npm warn deprecated tsparticles-shape-circle@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:52.9647806Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.1382973Z npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.1622995Z npm warn deprecated tsparticles-interaction-particles-collisions@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.1854208Z npm warn deprecated tsparticles-updater-size@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.2556776Z npm warn deprecated tsparticles-move-base@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.3617240Z npm warn deprecated tsparticles-updater-color@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.3862574Z npm warn deprecated tsparticles-updater-opacity@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.4769778Z npm warn deprecated tsparticles-shape-star@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.5062297Z npm warn deprecated tsparticles-updater-stroke-color@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.5903037Z npm warn deprecated tsparticles-basic@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.6146382Z npm warn deprecated tsparticles-shape-polygon@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.7646792Z npm warn deprecated tsparticles-interaction-external-remove@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.7868098Z npm warn deprecated tsparticles-interaction-external-push@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.8078120Z npm warn deprecated react-tsparticles@2.12.2: @tsparticles/react is the new version, please use that
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.8288383Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.8461252Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.8724925Z npm warn deprecated tsparticles-slim@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.9037305Z npm warn deprecated tsparticles-particles.js@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.9268288Z npm warn deprecated tsparticles-interaction-external-slow@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:53.9743646Z npm warn deprecated tsparticles-interaction-external-trail@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.0149735Z npm warn deprecated tsparticles@2.12.0: tsParticles v3 is out, it contains breaking changes and it's recommended to migrate to that version with fixes and new features
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.0343817Z npm warn deprecated tsparticles-updater-twinkle@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.0545155Z npm warn deprecated tsparticles-interaction-external-attract@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.0605489Z npm warn deprecated tsparticles-updater-out-modes@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.0750400Z npm warn deprecated tsparticles-interaction-external-bounce@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1194813Z npm warn deprecated tsparticles-updater-rotate@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1436283Z npm warn deprecated tsparticles-interaction-external-repulse@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1543426Z npm warn deprecated tsparticles-updater-life@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1597685Z npm warn deprecated tsparticles-updater-tilt@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1600152Z npm warn deprecated tsparticles-updater-wobble@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1759629Z npm warn deprecated tsparticles-interaction-external-grab@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.1803573Z npm warn deprecated tsparticles-interaction-external-connect@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.2661955Z npm warn deprecated tsparticles-updater-roll@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.2792502Z npm warn deprecated tsparticles-interaction-particles-links@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.3045275Z npm warn deprecated tsparticles-interaction-external-bubble@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.3348713Z npm warn deprecated tsparticles-plugin-absorbers@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.3981860Z npm warn deprecated tsparticles-updater-destroy@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.5525666Z npm warn deprecated tsparticles-shape-image@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:54.5850764Z npm warn deprecated tsparticles-plugin-emitters@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:55.3551472Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Build and Deploy Job	Install dependencies	2025-10-04T16:56:56.1040057Z npm warn deprecated tsparticles-engine@2.12.0: starting from tsparticles v3 the packages are now moved to @tsparticles/package-name instead of tsparticles-package-name
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6149639Z 
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6150330Z added 435 packages, and audited 436 packages in 12s
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6150783Z 
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6151024Z 156 packages are looking for funding
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6151481Z   run `npm fund` for details
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6162563Z 
+Build and Deploy Job	Install dependencies	2025-10-04T16:57:00.6162792Z found 0 vulnerabilities
+Build and Deploy Job	Run linting	´╗┐2025-10-04T16:57:00.6510000Z ##[group]Run npm run lint
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.6510427Z [36;1mnpm run lint[0m
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.6553109Z shell: /usr/bin/bash -e {0}
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.6553458Z ##[endgroup]
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.7911749Z 
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.7912410Z > lalith-portfolio@1.0.0 lint
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.7912848Z > next lint
+Build and Deploy Job	Run linting	2025-10-04T16:57:00.7913016Z 
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.6933269Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.6935179Z This information is used to shape Next.js' roadmap and prioritize features.
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.6936859Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.6938399Z https://nextjs.org/telemetry
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.6938701Z 
+Build and Deploy Job	Run linting	2025-10-04T16:57:02.8592080Z Ô£ö No ESLint warnings or errors
+Build and Deploy Job	Build Next.js app	´╗┐2025-10-04T16:57:02.9610034Z ##[group]Run npm run build
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9610311Z [36;1mnpm run build[0m
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9643189Z shell: /usr/bin/bash -e {0}
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9643414Z env:
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9643593Z   NODE_ENV: production
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9643808Z   NEXT_TELEMETRY_DISABLED: 1
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:02.9644033Z ##[endgroup]
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.1201228Z 
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.1202000Z > lalith-portfolio@1.0.0 build
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.1202340Z > next build
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.1202453Z 
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.7793562Z   Ôû▓ Next.js 14.2.33
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.7797889Z 
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:03.7802464Z    Linting and checking validity of types ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:07.6067030Z    Creating an optimized production build ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:19.8979121Z  Ô£ô Compiled successfully
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:19.8984952Z    Collecting page data ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:20.6705686Z    Generating static pages (0/3) ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:20.8984586Z  Ô£ô Generating static pages (3/3)
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:21.0843284Z    Finalizing page optimization ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:21.0844247Z    Collecting build traces ...
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7158011Z 
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7268517Z Route (pages)                              Size     First Load JS
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7269671Z Ôöî Ôùï /                                      1.34 kB         143 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7270166Z Ôö£   /_app                                  0 B             142 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7270627Z Ôö£ Ôùï /404                                   1.5 kB          146 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7271073Z Ôöö Ôùï /500                                   1.58 kB         146 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7271455Z + First Load JS shared by all              147 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7271890Z   Ôö£ chunks/framework-64ad27b21261a9ce.js   44.8 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7272357Z   Ôö£ chunks/main-bec63c43e6b8f591.js        34.1 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7272775Z   Ôö£ chunks/pages/_app-e7eafc0dea11828d.js  61.2 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7273182Z   Ôöö other shared chunks (total)            7.23 kB
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7273390Z 
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7273601Z Ôùï  (Static)  prerendered as static content
+Build and Deploy Job	Build Next.js app	2025-10-04T16:57:27.7273823Z 
+Build and Deploy Job	Verify build output	´╗┐2025-10-04T16:57:27.7613165Z ##[group]Run echo "Checking if 'out' directory exists..."
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7613591Z [36;1mecho "Checking if 'out' directory exists..."[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7613886Z [36;1mls -la[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7614100Z [36;1mif [ -d "out" ]; then[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7614357Z [36;1m  echo "Ô£à 'out' directory found!"[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7614638Z [36;1m  echo "Contents of 'out' directory:"[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7614888Z [36;1m  ls -la out/[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7615121Z [36;1m  echo "Checking for index.html..."[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7615398Z [36;1m  if [ -f "out/index.html" ]; then[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7615706Z [36;1m    echo "Ô£à index.html found in out/ directory!"[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7616212Z [36;1m  else[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7616454Z [36;1m    echo "ÔØî index.html NOT found in out/ directory!"[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7616732Z [36;1m    exit 1[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7616914Z [36;1m  fi[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7617095Z [36;1melse[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7617288Z [36;1m  echo "ÔØî 'out' directory NOT found!"[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7617572Z [36;1m  exit 1[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7617743Z [36;1mfi[0m
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7650859Z shell: /usr/bin/bash -e {0}
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7651105Z ##[endgroup]
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7703679Z Checking if 'out' directory exists...
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7719235Z total 508
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7720019Z drwxr-xr-x   9 runner runner   4096 Oct  4 16:57 .
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7720722Z drwxr-xr-x   3 runner runner   4096 Oct  4 16:56 ..
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7721466Z -rw-r--r--   1 runner runner    139 Oct  4 16:56 .eslintrc.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7722211Z drwxr-xr-x   7 runner runner   4096 Oct  4 16:56 .git
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7722912Z drwxr-xr-x   3 runner runner   4096 Oct  4 16:56 .github
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7723601Z -rw-r--r--   1 runner runner    332 Oct  4 16:56 .gitignore
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7724252Z drwxr-xr-x   5 runner runner   4096 Oct  4 16:57 .next
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7724972Z -rw-r--r--   1 runner runner  23155 Oct  4 16:56 AUDIT_REPORT.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7726032Z -rw-r--r--   1 runner runner   9439 Oct  4 16:56 AZURE_DEPLOYMENT_FIX.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7726999Z -rw-r--r--   1 runner runner   7231 Oct  4 16:56 AZURE_TOKEN_FIX_GUIDE.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7727871Z -rw-r--r--   1 runner runner   8124 Oct  4 16:56 BUILD_FIX_SUMMARY.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7728773Z -rw-r--r--   1 runner runner  15175 Oct  4 16:56 COMPREHENSIVE_AUDIT_REPORT.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7729670Z -rw-r--r--   1 runner runner  10910 Oct  4 16:56 DEPLOYMENT_CHECKLIST.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7730539Z -rw-r--r--   1 runner runner   2125 Oct  4 16:56 FINAL_FIX_INSTRUCTIONS.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7731685Z -rw-r--r--   1 runner runner  17981 Oct  4 16:56 FINAL_IMPROVEMENTS_SUMMARY.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7732622Z -rw-r--r--   1 runner runner  15494 Oct  4 16:56 FUTURE_PROOF_ARCHITECTURE.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7733458Z -rw-r--r--   1 runner runner   1063 Oct  4 16:56 LICENSE
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7734174Z -rw-r--r--   1 runner runner   2231 Oct  4 16:56 QUICK_START.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7734904Z -rw-r--r--   1 runner runner   6356 Oct  4 16:56 README.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7735986Z -rw-r--r--   1 runner runner  13624 Oct  4 16:56 RESPONSIVE_OPTIMIZATION_REPORT.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7736868Z -rw-r--r--   1 runner runner  10674 Oct  4 16:56 SETUP_GUIDE.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7737602Z -rw-r--r--   1 runner runner  11939 Oct  4 16:56 TESTING_GUIDE.md
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7738369Z -rw-r--r--   1 runner runner    230 Oct  4 16:57 next-env.d.ts
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7739122Z -rw-r--r--   1 runner runner    488 Oct  4 16:56 next.config.js
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7739850Z drwxr-xr-x 390 runner runner  20480 Oct  4 16:57 node_modules
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7740568Z drwxr-xr-x   5 runner runner   4096 Oct  4 16:57 out
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7741321Z -rw-r--r--   1 runner runner 243494 Oct  4 16:57 package-lock.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7742078Z -rw-r--r--   1 runner runner   1322 Oct  4 16:56 package.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7742822Z -rw-r--r--   1 runner runner     83 Oct  4 16:56 postcss.config.js
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7743735Z drwxr-xr-x   2 runner runner   4096 Oct  4 16:56 public
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7744405Z drwxr-xr-x   6 runner runner   4096 Oct  4 16:56 src
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7744853Z -rw-r--r--   1 runner runner   8338 Oct  4 16:56 tailwind.config.js
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7745329Z -rw-r--r--   1 runner runner    616 Oct  4 16:56 tsconfig.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7746131Z Ô£à 'out' directory found!
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7746396Z Contents of 'out' directory:
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7746627Z total 176
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7746896Z drwxr-xr-x 5 runner runner  4096 Oct  4 16:57 .
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7747251Z drwxr-xr-x 9 runner runner  4096 Oct  4 16:57 ..
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7747603Z drwxr-xr-x 2 runner runner  4096 Oct  4 16:57 404
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7747962Z -rw-r--r-- 1 runner runner 58676 Oct  4 16:57 404.html
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7748323Z drwxr-xr-x 2 runner runner  4096 Oct  4 16:57 500
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7748727Z -rw-r--r-- 1 runner runner  2819 Oct  4 16:57 ICONS_README.txt
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7749105Z drwxr-xr-x 4 runner runner  4096 Oct  4 16:57 _next
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7749485Z -rw-r--r-- 1 runner runner   144 Oct  4 16:57 favicon.ico
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7749860Z -rw-r--r-- 1 runner runner 58983 Oct  4 16:57 index.html
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7750235Z -rw-r--r-- 1 runner runner  1005 Oct  4 16:57 manifest.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7750627Z -rw-r--r-- 1 runner runner   202 Oct  4 16:57 og-image.png
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7751050Z -rw-r--r-- 1 runner runner   739 Oct  4 16:57 resume-placeholder.txt
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7751454Z -rw-r--r-- 1 runner runner   153 Oct  4 16:57 resume.pdf
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7751812Z -rw-r--r-- 1 runner runner   316 Oct  4 16:57 robots.txt
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7752179Z -rw-r--r-- 1 runner runner  1377 Oct  4 16:57 sitemap.xml
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7752600Z -rw-r--r-- 1 runner runner  1329 Oct  4 16:57 staticwebapp.config.json
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7752949Z Checking for index.html...
+Build and Deploy Job	Verify build output	2025-10-04T16:57:27.7753267Z Ô£à index.html found in out/ directory!
+Build and Deploy Job	Build And Deploy	´╗┐2025-10-04T16:57:27.7798795Z ##[group]Run Azure/static-web-apps-deploy@v1
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7799090Z with:
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7799756Z   azure_static_web_apps_api_token: ***
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7800123Z   repo_token: ***
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7800311Z   action: upload
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7800490Z   app_location: out
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7800679Z   skip_app_build: true
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7800865Z ##[endgroup]
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:27.7893835Z ##[command]/usr/bin/docker run --name a6d496bc9b0d1829734f1195bd42159a1ebc1b_99e9b9 --label a6d496 --workdir /github/workspace --rm -e "INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN" -e "INPUT_REPO_TOKEN" -e "INPUT_ACTION" -e "INPUT_APP_LOCATION" -e "INPUT_API_LOCATION" -e "INPUT_OUTPUT_LOCATION" -e "INPUT_SKIP_APP_BUILD" -e "INPUT_API_BUILD_COMMAND" -e "INPUT_APP_ARTIFACT_LOCATION" -e "INPUT_APP_BUILD_COMMAND" -e "INPUT_ROUTES_LOCATION" -e "INPUT_CONFIG_FILE_LOCATION" -e "INPUT_SKIP_API_BUILD" -e "INPUT_PRODUCTION_BRANCH" -e "INPUT_DEPLOYMENT_ENVIRONMENT" -e "INPUT_IS_STATIC_EXPORT" -e "INPUT_DATA_API_LOCATION" -e "INPUT_GITHUB_ID_TOKEN" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/portfolio/portfolio":"/github/workspace" a6d496:bc9b0d1829734f1195bd42159a1ebc1b
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:28.9535630Z DeploymentId: ca7e90d4-b4ec-497d-a003-d75de2d07b36
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:28.9536336Z 
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:29.0683199Z [37mTry to validate location at: '/github/workspace/out'.[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:29.0696730Z [37mApp Directory Location: 'out' was found.[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:29.0697549Z [37mTry to validate location at: '/github/workspace/swa-db-connections'.[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:29.0699886Z [37mLooking for event info[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.0497063Z [37mSkipping step to build /github/workspace/out with Oryx[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.0529280Z [37mUsing 'staticwebapp.config.json' file for configuration information, 'routes.json' will be ignored.[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.0702212Z [31mEncountered an issue while validating staticwebapp.config.json: Error status code '500' is invalid. Please use the supported ErrorTypes. Visit https://aka.ms/static-web-apps-configuration for more information.[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.2428186Z [37m[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.2429344Z [33mFor further information, please visit the Azure Static Web Apps documentation at https://docs.microsoft.com/en-us/azure/static-web-apps/[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.2430502Z [33mIf you believe this behavior is unexpected, please raise a GitHub issue at https://github.com/azure/static-web-apps/issues/[0m
+Build and Deploy Job	Build And Deploy	2025-10-04T16:57:30.2431482Z [33mExiting[0m
+Build and Deploy Job	Post Run actions/checkout@v4	´╗┐2025-10-04T16:57:30.3234220Z Post job cleanup.
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4163210Z [command]/usr/bin/git version
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4200324Z git version 2.51.0
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4244063Z Temporarily overriding HOME='/home/runner/work/_temp/1237949c-5958-4a3f-8c4a-bcbd3cd77bc3' before making global git config changes
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4245531Z Adding repository directory to the temporary git global config as a safe directory
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4250846Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portfolio/portfolio
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4286659Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4319539Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4549880Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4571088Z http.https://github.com/.extraheader
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4584695Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Build and Deploy Job	Post Run actions/checkout@v4	2025-10-04T16:57:30.4616715Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build and Deploy Job	Complete job	´╗┐2025-10-04T16:57:30.4932851Z Cleaning up orphan processes
