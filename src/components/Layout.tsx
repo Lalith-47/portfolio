@@ -4,7 +4,7 @@ import ParticleBackground from "./ParticleBackground";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
+// import Projects from "./sections/Projects"; // Removed - Projects section hidden
 import Contact from "./sections/Contact";
 import Footer from "./Footer";
 
@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
         <Hero />
         <About />
         <Skills />
-        <Projects />
+        {/* <Projects /> - Removed: Projects section hidden */}
         <Contact />
         {children}
       </main>

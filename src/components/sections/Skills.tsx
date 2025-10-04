@@ -1,44 +1,27 @@
 import { motion } from "framer-motion";
+import { FiCode, FiTerminal } from "react-icons/fi";
 import {
-  FiCode,
-  FiDatabase,
-  FiGitBranch,
-  FiCloud,
-  FiTerminal,
-  FiSettings,
-  FiMonitor,
-  FiServer,
-} from "react-icons/fi";
-import {
-  SiJavascript,
-  SiTypescript,
   SiPython,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiTailwindcss,
+  SiCplusplus,
+  SiC,
+  SiOracle,
   SiLinux,
   SiUbuntu,
   SiArchlinux,
   SiGit,
   SiGithub,
   SiMicrosoftazure,
-  SiDocker,
-  SiPostgresql,
-  SiMongodb,
 } from "react-icons/si";
 
 const skillCategories = [
   {
-    title: "Web Development",
+    title: "Programming Languages",
     icon: FiCode,
     skills: [
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "C++", icon: SiCplusplus, color: "#00599C" },
+      { name: "C", icon: SiC, color: "#A8B9CC" },
+      { name: "Java", icon: SiOracle, color: "#007396" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
     ],
   },
   {
@@ -48,44 +31,16 @@ const skillCategories = [
       { name: "Linux", icon: SiLinux, color: "#FCC624" },
       { name: "Ubuntu", icon: SiUbuntu, color: "#E95420" },
       { name: "Arch Linux", icon: SiArchlinux, color: "#1793D1" },
-      { name: "KDE Plasma", icon: FiMonitor, color: "#1D99F3" },
-      { name: "GNOME", icon: FiSettings, color: "#4A90E2" },
       { name: "Bash/Shell", icon: FiTerminal, color: "#4EAA25" },
     ],
   },
   {
-    title: "Version Control",
-    icon: FiGitBranch,
+    title: "Tools & Technologies",
+    icon: FiCode,
     skills: [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#181717" },
-      { name: "Version Control", icon: FiGitBranch, color: "#F05032" },
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    icon: FiCloud,
-    skills: [
-      { name: "Microsoft Azure", icon: SiMicrosoftazure, color: "#0078D4" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Static Web Apps", icon: FiServer, color: "#0078D4" },
-    ],
-  },
-  {
-    title: "Languages",
-    icon: FiCode,
-    skills: [
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-    ],
-  },
-  {
-    title: "Databases",
-    icon: FiDatabase,
-    skills: [
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Azure", icon: SiMicrosoftazure, color: "#0078D4" },
     ],
   },
 ];
