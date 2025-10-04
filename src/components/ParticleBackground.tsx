@@ -8,19 +8,12 @@ const Particles = dynamic(() => import("react-tsparticles"), {
   loading: () => <div className="absolute inset-0 z-0" />,
 });
 
-// Dynamically import the engine
-const loadSlim = dynamic(
-  () => import("tsparticles-slim").then((mod) => mod.loadSlim),
-  {
-    ssr: false,
-  }
-);
-
 export default function ParticleBackground() {
   const particlesInit = useCallback(async (engine: any) => {
     try {
-      const slimLoader = await loadSlim;
-      await slimLoader(engine);
+      // Dynamically import and load the slim engine
+      const { loadSlim } = await import("tsparticles-slim");
+      await loadSlim(engine);
     } catch (error) {
       console.warn("Failed to load particles engine:", error);
     }
@@ -46,13 +39,13 @@ export default function ParticleBackground() {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: "push" as const,
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "repulse" as const,
           },
-          resize: true,
+          resize: true as const,
         },
         modes: {
           push: {
@@ -79,10 +72,10 @@ export default function ParticleBackground() {
           enable: false, // Disabled for better performance
         },
         move: {
-          direction: "none",
+          direction: "none" as const,
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "bounce" as const,
           },
           random: false,
           speed: 0.8, // Reduced from 1
@@ -99,7 +92,7 @@ export default function ParticleBackground() {
           value: 0.25, // Reduced from 0.3
         },
         shape: {
-          type: "circle",
+          type: "circle" as const,
         },
         size: {
           value: { min: 1, max: 2.5 }, // Slightly reduced max size

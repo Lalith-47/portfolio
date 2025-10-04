@@ -19,7 +19,7 @@ const terminalCommands = [
 export default function About() {
   const [currentCommand, setCurrentCommand] = useState(0);
   const [displayedCommands, setDisplayedCommands] = useState<
-    typeof terminalCommands
+    Array<{ command: string; output: string }>
   >([]);
   const [isInView, setIsInView] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
