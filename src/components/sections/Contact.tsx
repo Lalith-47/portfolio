@@ -84,7 +84,7 @@ export default function Contact() {
 
   /**
    * Form submission handler
-   * Sends data to Azure Function API endpoint
+   * Calls EmailJS directly from the browser
    * @param data - Form data from React Hook Form
    */
   const onSubmit = async (data: FormData) => {
@@ -92,24 +92,38 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      // Call Azure Function API
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          message: data.message,
-        }),
-      });
+      // EmailJS configuration (client-side only)
+      const SERVICE_ID = "service_hxaf188";
+      const TEMPLATE_ID = "template_csic1ln";
+      const PUBLIC_KEY = "u0Q7pzBoYs7QFT9e9";
 
-      const result = await response.json();
+      // Call EmailJS API directly from browser
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            service_id: SERVICE_ID,
+            template_id: TEMPLATE_ID,
+            user_id: PUBLIC_KEY,
+            template_params: {
+              from_name: data.name,
+              from_email: data.email,
+              subject: data.subject,
+              message: data.message,
+              to_email: "Lalith22p3347@gmail.com",
+              reply_to: data.email,
+            },
+          }),
+        }
+      );
 
-      if (response.ok && result.success) {
-        console.log("Form submitted successfully:", data);
+      if (response.ok) {
+        console.log("✅ Form submitted successfully!");
+        console.log("📧 Email sent to: Lalith22p3347@gmail.com");
         setIsSubmitted(true);
         reset();
         showToastNotification(
@@ -117,7 +131,16 @@ export default function Contact() {
           "success"
         );
       } else {
-        throw new Error(result.message || "Form submission failed");
+        const errorText = await response.text();
+        console.error("❌ EmailJS API Error:");
+        console.error("Status:", response.status);
+        console.error("Response:", errorText);
+        console.error("Request payload:", {
+          service_id: SERVICE_ID,
+          template_id: TEMPLATE_ID,
+          user_id: PUBLIC_KEY,
+        });
+        throw new Error(`EmailJS Error: ${errorText || response.status}`);
       }
     } catch (error) {
       console.error("Form submission error:", error);

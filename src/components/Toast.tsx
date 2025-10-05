@@ -1,16 +1,16 @@
 /**
  * Toast Notification Component
- * 
+ *
  * A lightweight, accessible toast notification component for displaying
  * success, error, and info messages to users.
- * 
+ *
  * @author Lalith
  * @version 1.0.0
  */
 
 import { motion, AnimatePresence } from "framer-motion";
 import { FiCheckCircle, FiAlertCircle, FiInfo, FiX } from "react-icons/fi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export type ToastType = "success" | "error" | "info";
 
@@ -24,7 +24,7 @@ interface ToastProps {
 
 /**
  * Toast Component
- * 
+ *
  * Displays a temporary notification message with automatic dismissal
  */
 export default function Toast({
@@ -34,6 +34,12 @@ export default function Toast({
   onClose,
   duration = 5000,
 }: ToastProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (isVisible && duration > 0) {
       const timer = setTimeout(() => {
@@ -44,10 +50,17 @@ export default function Toast({
     }
   }, [isVisible, duration, onClose]);
 
+  // Don't render on server to avoid hydration mismatch
+  if (!mounted) {
+    return null;
+  }
+
   const getIcon = () => {
     switch (type) {
       case "success":
-        return <FiCheckCircle className="text-green-400 text-xl flex-shrink-0" />;
+        return (
+          <FiCheckCircle className="text-green-400 text-xl flex-shrink-0" />
+        );
       case "error":
         return <FiAlertCircle className="text-red-400 text-xl flex-shrink-0" />;
       case "info":
@@ -98,4 +111,3 @@ export default function Toast({
     </AnimatePresence>
   );
 }
-

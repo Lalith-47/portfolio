@@ -9,7 +9,7 @@ Go to: Azure Portal → Your Static Web App → Configuration → Application Se
 Add these THREE environment variables:
 
 1. EMAILJS_SERVICE_ID
-   Value: service_sbi2ycf
+   Value: service_hxaf188
 
 2. EMAILJS_TEMPLATE_ID
    Value: template_csic1ln
