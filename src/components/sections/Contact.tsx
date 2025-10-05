@@ -12,7 +12,7 @@
  * @version 1.0.0
  */
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import {
@@ -24,6 +24,7 @@ import {
   FiAlertCircle,
   FiCheckCircle,
 } from "react-icons/fi";
+import Toast, { ToastType } from "@/components/Toast";
 
 /**
  * Form data interface for type safety
@@ -56,6 +57,11 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  
+  // Toast notification state
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastType, setToastType] = useState<ToastType>("info");
 
   // React Hook Form setup with validation mode
   const {
@@ -68,8 +74,17 @@ export default function Contact() {
   });
 
   /**
+   * Show toast notification
+   */
+  const showToastNotification = (message: string, type: ToastType) => {
+    setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
+  };
+
+  /**
    * Form submission handler
-   * Uses Web3Forms API for free, serverless form submission
+   * Sends data to Azure Function API endpoint
    * @param data - Form data from React Hook Form
    */
   const onSubmit = async (data: FormData) => {
@@ -77,24 +92,17 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      // Web3Forms endpoint - Free tier: 250 submissions/month
-      // Sign up at: https://web3forms.com/ to get your access key
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Call Azure Function API
+      const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // TODO: Get free key from https://web3forms.com/
           name: data.name,
           email: data.email,
+          subject: data.subject,
           message: data.message,
-          subject: `New Portfolio Contact from ${data.name}`,
-          from_name: "Lalith's Portfolio Website",
-          to_email: "Lalith22p3347@gmail.com",
-          // Optional: Add honeypot for spam protection
-          botcheck: "",
         }),
       });
 
@@ -104,16 +112,22 @@ export default function Contact() {
         console.log("Form submitted successfully:", data);
         setIsSubmitted(true);
         reset();
+        showToastNotification(
+          "Message sent successfully! I'll get back to you soon.",
+          "success"
+        );
       } else {
         throw new Error(result.message || "Form submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitError(
+      const errorMessage =
         error instanceof Error
           ? error.message
-          : "Failed to send message. Please try again later or email me directly at Lalith22p3347@gmail.com"
-      );
+          : "Failed to send message. Please try again later or email me directly at Lalith22p3347@gmail.com";
+      
+      setSubmitError(errorMessage);
+      showToastNotification(errorMessage, "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -166,8 +180,15 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section-padding container-responsive">
-      <div className="w-full max-w-6xl mx-auto">
+    <React.Fragment>
+      <Toast
+        message={toastMessage}
+        type={toastType}
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
+      <section id="contact" className="section-padding container-responsive">
+        <div className="w-full max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -571,5 +592,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </React.Fragment>
   );
 }
