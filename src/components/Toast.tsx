@@ -87,23 +87,23 @@ export default function Toast({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -20, scale: 0.95 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed top-4 right-4 z-50 max-w-md w-full px-4"
+          className="fixed top-16 sm:top-20 right-2 sm:right-4 z-[9999] max-w-sm sm:max-w-md w-full px-2 sm:px-4"
           role="alert"
           aria-live="polite"
         >
           <div
-            className={`glass border rounded-lg p-4 flex items-center gap-3 shadow-lg ${getStyles()}`}
+            className={`glass border rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-3 shadow-lg ${getStyles()}`}
           >
             {getIcon()}
-            <p className="flex-1 text-white text-sm sm:text-base font-medium">
+            <p className="flex-1 text-white text-xs sm:text-sm md:text-base font-medium leading-tight">
               {message}
             </p>
             <button
               onClick={onClose}
-              className="text-white/70 hover:text-white transition-colors p-1 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+              className="text-white/70 hover:text-white transition-colors p-1 sm:p-1.5 focus:outline-none focus:ring-2 focus:ring-white/50 rounded min-w-[32px] min-h-[32px] flex items-center justify-center"
               aria-label="Close notification"
             >
-              <FiX className="text-lg" />
+              <FiX className="text-base sm:text-lg" />
             </button>
           </div>
         </motion.div>
