@@ -203,7 +203,7 @@ export default function Navbar() {
                     scrollToSection(item.href);
                   }}
                   onKeyDown={(e) => handleKeyDown(e, item.href)}
-                  className="block w-full text-left text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 py-3.5 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg text-base font-medium min-h-[52px] flex items-center touch-manipulation"
+                  className="block w-full text-left text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 py-3.5 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg text-base font-medium min-h-[52px] flex items-center justify-start touch-manipulation"
                   aria-label={`Navigate to ${item.name} section`}
                   type="button"
                 >
