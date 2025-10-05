@@ -14,8 +14,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // Temporarily disable static export for local API testing
-  // output: "export",  // Re-enable this for production build
+  // Static export for GitHub Pages and Azure Static Web Apps deployment
+  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,
