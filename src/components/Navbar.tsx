@@ -14,7 +14,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 50);
+    if (typeof window !== "undefined") {
+      setScrolled(window.scrollY > 50);
+    }
   }, []);
 
   useEffect(() => {
@@ -28,20 +30,22 @@ export default function Navbar() {
 
     // Wait a bit for sidebar to close, then scroll
     setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        // Get the element's position relative to the viewport
-        const elementRect = element.getBoundingClientRect();
-        const absoluteElementTop = elementRect.top + window.pageYOffset;
+      if (typeof window !== "undefined") {
+        const element = document.querySelector(href);
+        if (element) {
+          // Get the element's position relative to the viewport
+          const elementRect = element.getBoundingClientRect();
+          const absoluteElementTop = elementRect.top + window.pageYOffset;
 
-        // Scroll to the element with some offset for the navbar
-        const offset = 80; // Account for navbar height
-        window.scrollTo({
-          top: absoluteElementTop - offset,
-          behavior: "smooth",
-        });
-      } else {
-        console.warn(`Element with selector "${href}" not found`);
+          // Scroll to the element with some offset for the navbar
+          const offset = 80; // Account for navbar height
+          window.scrollTo({
+            top: absoluteElementTop - offset,
+            behavior: "smooth",
+          });
+        } else {
+          console.warn(`Element with selector "${href}" not found`);
+        }
       }
     }, 100); // Small delay to ensure sidebar closes first
   }, []);
