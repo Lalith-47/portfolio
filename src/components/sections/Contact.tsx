@@ -439,7 +439,7 @@ export default function Contact() {
                           })}
                           type="text"
                           id="name"
-                          className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
+                          className={`form-input-responsive glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
                             errors.name
                               ? "border-red-500/50 focus:border-red-400"
                               : "border-white/20 focus:border-blue-400"
@@ -478,7 +478,7 @@ export default function Contact() {
                           })}
                           type="email"
                           id="email"
-                          className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
+                          className={`form-input-responsive glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
                             errors.email
                               ? "border-red-500/50 focus:border-red-400"
                               : "border-white/20 focus:border-blue-400"
@@ -522,7 +522,7 @@ export default function Contact() {
                         })}
                         type="text"
                         id="subject"
-                        className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 text-base ${
+                        className={`form-input-responsive glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
                           errors.subject
                             ? "border-red-500/50 focus:border-red-400"
                             : "border-white/20 focus:border-blue-400"
@@ -566,7 +566,7 @@ export default function Contact() {
                         })}
                         id="message"
                         rows={5}
-                        className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 resize-none text-base ${
+                        className={`form-textarea-responsive glass border rounded-lg focus:outline-none transition-colors duration-300 text-white placeholder-white/50 ${
                           errors.message
                             ? "border-red-500/50 focus:border-red-400"
                             : "border-white/20 focus:border-blue-400"
@@ -593,7 +593,7 @@ export default function Contact() {
                       disabled={isSubmitting}
                       whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      className={`w-full glass-button glow-border px-8 py-4 text-lg font-semibold rounded-xl flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent ${
+                      className={`button-responsive w-full glass-button glow-border font-semibold rounded-xl flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-transparent ${
                         isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                       }`}
                     >
