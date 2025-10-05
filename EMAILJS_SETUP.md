@@ -23,27 +23,72 @@ This guide will help you set up EmailJS to enable the contact form functionality
 
 1. Go to **Email Templates** in the dashboard
 2. Click **Create New Template**
-3. Use this template structure:
+3. Configure the template:
 
 **Template Name:** `portfolio_contact`
 
-**Subject:** `New Portfolio Contact from {{from_name}}`
+**Subject:** `New Portfolio Contact: {{subject}}`
 
-**Content:**
+**Content (HTML):**
 
+```html
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px">
+  <div>
+    A message by {{from_name}} has been received. Kindly respond at your
+    earliest convenience.
+  </div>
+  <div
+    style="
+      margin-top: 20px;
+      padding: 15px 0;
+      border-width: 1px 0;
+      border-style: dashed;
+      border-color: lightgrey;
+    "
+  >
+    <table role="presentation">
+      <tr>
+        <td style="vertical-align: top">
+          <div
+            style="
+              padding: 6px 10px;
+              margin: 0 10px;
+              background-color: aliceblue;
+              border-radius: 5px;
+              font-size: 26px;
+            "
+            role="img"
+          >
+            👤
+          </div>
+        </td>
+        <td style="vertical-align: top">
+          <div style="color: #2c3e50; font-size: 16px">
+            <strong>{{from_name}}</strong>
+          </div>
+          <div style="color: #7f8c8d; font-size: 13px">{{from_email}}</div>
+          <div style="color: #95a5a6; font-size: 12px; margin-top: 5px">
+            Subject: {{subject}}
+          </div>
+          <p style="font-size: 16px; margin-top: 10px; color: #2c3e50">
+            {{message}}
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div style="margin-top: 20px; font-size: 11px; color: #95a5a6">
+    Sent from your portfolio website contact form
+  </div>
+</div>
 ```
-You have received a new message from your portfolio website!
 
-From: {{from_name}}
-Email: {{from_email}}
-Subject: {{subject}}
+**Important Template Variables to Map:**
 
-Message:
-{{message}}
-
----
-Reply to: {{reply_to}}
-```
+- `{{from_name}}` - Sender's name
+- `{{from_email}}` - Sender's email address
+- `{{subject}}` - Message subject
+- `{{message}}` - Message content
 
 4. Save the template and copy your **Template ID** (e.g., `template_xxxxxxx`)
 
