@@ -69,7 +69,7 @@ export default function Hero() {
    */
   const handleResumeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Check if resume exists by attempting to fetch it
-    fetch("/resume.pdf", { method: "HEAD" })
+    fetch("/LalithResume.pdf", { method: "HEAD" })
       .then((response) => {
         if (!response.ok) {
           // Resume not found, prevent default and show message
@@ -182,7 +182,7 @@ export default function Hero() {
             </motion.button>
 
             <motion.a
-              href="/resume.pdf"
+              href="/LalithResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleResumeClick}
